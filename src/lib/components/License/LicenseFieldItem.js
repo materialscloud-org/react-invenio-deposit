@@ -60,7 +60,7 @@ export const LicenseFieldItem = ({
         }
       >
         <List.Content floated="right">
-          <LicenseModal
+{/*          <LicenseModal
             searchConfig={searchConfig}
             onLicenseChange={(selectedLicense) => {
               replaceLicense(license.index, selectedLicense);
@@ -74,7 +74,7 @@ export const LicenseFieldItem = ({
               </Button>
             }
             serializeLicenses={serializeLicenses}
-          />
+          />*/}
           <Button
             size="mini"
             type="button"

@@ -31,7 +31,7 @@ export const FileUploaderToolbar = ({
 
   return (
     <>
-      <Grid.Column verticalAlign="middle" floated="left" mobile={16} tablet={6} computer={6}>
+ {/*     <Grid.Column verticalAlign="middle" floated="left" mobile={16} tablet={6} computer={6}>
         {config.canHaveMetadataOnlyRecords && (
           <List horizontal>
             <List.Item>
@@ -51,10 +51,12 @@ export const FileUploaderToolbar = ({
             </List.Item>
           </List>
         )}
-      </Grid.Column>
+      </Grid.Column>*/}
       {filesEnabled && (
-        <Grid.Column mobile={16} tablet={10} computer={10} className="storage-col">
-          <Header size="tiny" className="mr-10">{i18next.t('Storage available')}</Header>
+        /*<Grid.Column mobile={16} tablet={10} computer={10} className="storage-col">*/
+        <Grid.Column mobile={16} tablet={10} computer={10} style={{'display': 'flex', 'justify-content': 'flex-start', 'align-items': 'center'}}>
+          {/*<Header size="tiny" className="mr-10" >{i18next.t('Storage available')}</Header>*/}
+          <Header size="tiny" className="mr-10" style={{'margin-bottom': '0px', 'margin-top': '0px'}}>{i18next.t('Storage available')}</Header>
           <List horizontal floated="right">
             <List.Item>
               <Label

@@ -101,7 +101,7 @@ class LicenseFieldForm extends Component {
               trigger={
                 <Button type="button" key="standard" icon labelPosition="left">
                   <Icon name="add" />
-                  {i18next.t('Add standard')}
+                  {i18next.t('Add license')}
                 </Button>
               }
               onLicenseChange={(selectedLicense) => {
@@ -111,7 +111,7 @@ class LicenseFieldForm extends Component {
               action="add"
               serializeLicenses={this.props.serializeLicenses}
             />
-            <LicenseModal
+{/*            <LicenseModal
               searchConfig={this.props.searchConfig}
               trigger={
                 <Button type="button" key="custom" icon labelPosition="left">
@@ -124,7 +124,7 @@ class LicenseFieldForm extends Component {
               }}
               mode="custom"
               action="add"
-            />
+            />*/}
           </List>
         </Form.Field>
       </DndProvider>
@@ -157,7 +157,7 @@ LicenseField.propTypes = {
 
 LicenseField.defaultProps = {
   fieldPath: 'metadata.rights',
-  label: i18next.t('Licenses'),
+  label: i18next.t('License'),
   uiFieldPath: 'ui.rights',
   labelIcon: 'drivers license',
   required: false,

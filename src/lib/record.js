@@ -34,7 +34,7 @@ export const emptyRelatedWork = {
   scheme: '',
   identifier: '',
   resource_type: '',
-  relation_type: '',
+  relation_type: 'references',
 };
 
 export const emptyDate = {

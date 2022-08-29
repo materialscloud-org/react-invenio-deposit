@@ -166,9 +166,9 @@ CreatibutorsField.propTypes = {
 
 CreatibutorsField.defaultProps = {
   modal: {
-    addLabel: i18next.t('Add creator'),
-    editLabel: i18next.t('Edit creator'),
+    addLabel: i18next.t('Add author'),
+    editLabel: i18next.t('Edit author'),
   },
   autocompleteNames: 'search',
-  addButtonLabel: i18next.t('Add creator'),
+  addButtonLabel: i18next.t('Add author'),
 };

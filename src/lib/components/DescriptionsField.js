@@ -28,7 +28,7 @@ export class DescriptionsField extends Component {
           }
           optimized
         />
-        <AdditionalDescriptionsField recordUI={recordUI} options={options} />
+        {/*<AdditionalDescriptionsField recordUI={recordUI} options={options} />*/}
       </>
     );
   }

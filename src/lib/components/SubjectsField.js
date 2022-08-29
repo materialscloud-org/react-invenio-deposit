@@ -48,7 +48,7 @@ export class SubjectsField extends Component {
       limitToOptions,
     } = this.props;
     return (
-      <GroupField className="main-group-field">
+/*      <GroupField className="main-group-field">
         <Form.Field width={5} className="subjects-field">
           <FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />
           <GroupField>
@@ -68,7 +68,7 @@ export class SubjectsField extends Component {
               selection
               width={8}
             />
-          </GroupField>
+          </GroupField>*!/}
         </Form.Field>
         <Field name={this.props.fieldPath}>
           {({ form: { values } }) => {
@@ -99,16 +99,57 @@ export class SubjectsField extends Component {
                   );
                 }}
                 value={getIn(values, fieldPath, []).map((val) => val.subject)}
-                label={
+                /!*label={
                   <label className="mobile-hidden">&nbsp;</label>
-                } /** For alignment purposes */
+                }*!/ /!** For alignment purposes *!/
                 allowAdditions
-                width={11}
+                /!*width={11}*!/
               />
             );
           }}
         </Field>
-      </GroupField>
+      </GroupField>*/
+      <div>
+        <FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />
+        <Field name={this.props.fieldPath}>
+          {({ form: { values } }) => {
+            return (
+              <RemoteSelectField
+                clearable={clearable}
+                fieldPath={fieldPath}
+                initialSuggestions={getIn(values, fieldPath, [])}
+                multiple={multiple}
+                noQueryMessage={i18next.t('Search or create subjects...')}
+                placeholder={placeholder}
+                preSearchChange={this.prepareSuggest}
+                required={required}
+                serializeSuggestions={this.serializeSubjects}
+                serializeAddedValue={(value) => ({
+                  text: value,
+                  value: value,
+                  key: value,
+                  subject: value,
+                })}
+                suggestionAPIUrl="/api/subjects"
+                onValueChange={({ formikProps }, selectedSuggestions) => {
+                  formikProps.form.setFieldValue(
+                    fieldPath,
+                    // save the suggestion objects so we can extract information
+                    // about which value added by the user
+                    selectedSuggestions
+                  );
+                }}
+                value={getIn(values, fieldPath, []).map((val) => val.subject)}
+                /*label={
+                  <label className="mobile-hidden">&nbsp;</label>
+                }*/ /** For alignment purposes */
+                allowAdditions
+                /*width={11}*/
+              />
+            );
+          }}
+        </Field>
+      </div>
     );
   }
 }
@@ -132,9 +173,9 @@ SubjectsField.propTypes = {
 
 SubjectsField.defaultProps = {
   fieldPath: 'metadata.subjects',
-  label: i18next.t('Subjects'),
+  label: i18next.t('Keywords'),
   labelIcon: 'tag',
   multiple: true,
   clearable: true,
-  placeholder: i18next.t('Search for a subject by name'),
+  placeholder: i18next.t('Search for a keyword by name'),
 };

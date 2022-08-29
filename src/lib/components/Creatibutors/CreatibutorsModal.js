@@ -407,7 +407,7 @@ export class CreatibutorsModal extends Component {
               </Modal.Header>
               <Modal.Content>
                 <Form>
-                  <Form.Group>
+{/*                  <Form.Group>
                     <RadioField
                       fieldPath={typeFieldPath}
                       label={i18next.t('Person')}
@@ -440,11 +440,11 @@ export class CreatibutorsModal extends Component {
                       }}
                       optimized
                     />
-                  </Form.Group>
+                  </Form.Group>*/}
                   {_get(values, typeFieldPath, '') ===
                   CREATIBUTOR_TYPE.PERSON ? (
                     <div>
-                      {this.props.autocompleteNames !==
+{/*                      {this.props.autocompleteNames !==
                         NamesAutocompleteOptions.OFF && (
                         <RemoteSelectField
                           selectOnBlur={false}
@@ -470,7 +470,7 @@ export class CreatibutorsModal extends Component {
                           onValueChange={this.onPersonSearchChange}
                           ref={this.namesAutocompleteRef}
                         />
-                      )}
+                      )}*/}
                       {this.state.showPersonForm && (
                         <div>
                           <Form.Group widths="equal">
@@ -486,7 +486,7 @@ export class CreatibutorsModal extends Component {
                               fieldPath={givenNameFieldPath}
                             />
                           </Form.Group>
-                          <Form.Group widths="equal">
+{/*                          <Form.Group widths="equal">
                             <CreatibutorsIdentifiers
                               initialOptions={_map(
                                 _get(values, identifiersFieldPath, []),
@@ -499,7 +499,7 @@ export class CreatibutorsModal extends Component {
                               fieldPath={identifiersFieldPath}
                               ref={this.identifiersRef}
                             />
-                          </Form.Group>
+                          </Form.Group>*/}
                         </div>
                       )}
                     </div>
@@ -538,7 +538,7 @@ export class CreatibutorsModal extends Component {
                         fieldPath={affiliationsFieldPath}
                         selectRef={this.affiliationsRef}
                       />
-                      <SelectField
+{/*                      <SelectField
                         fieldPath={roleFieldPath}
                         label={i18next.t('Role')}
                         options={this.props.roleOptions}
@@ -547,7 +547,7 @@ export class CreatibutorsModal extends Component {
                         required={!this.isCreator()}
                         optimized
                         scrolling
-                      />
+                      />*/}
                     </div>
                   )}
                 </Form>

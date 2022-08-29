@@ -25,7 +25,7 @@ export class TitlesField extends Component {
           required={required}
           className="title-field"
         />
-        <AdditionalTitlesField options={options} recordUI={recordUI} />
+        {/*<AdditionalTitlesField options={options} recordUI={recordUI} />*/}
       </>
     );
   }
