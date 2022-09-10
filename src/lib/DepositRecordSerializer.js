@@ -214,7 +214,8 @@ export class RDMDepositRecordSerializer extends DepositRecordSerializer {
           serializedDefault: '',
         }),
       },
-      deserializedDefault: [emptyRelatedWork],
+      // deserializedDefault: [emptyRelatedWork],
+      deserializedDefault: [],
     }),
     subjects: new AllowAdditionsVocabularyField({
       fieldpath: 'metadata.subjects',
