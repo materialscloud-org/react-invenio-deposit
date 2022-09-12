@@ -34,7 +34,7 @@ const STATUSES = {
   },
   [DepositStatus.PUBLISHED]: {
     color: 'positive',
-    title: i18next.t('Published'),
+    title: i18next.t('Published record'),
     message: i18next.t('Your record is published. You can still modify any of its contents (e.g., its title), with the exception of its files. Adding or removing files requires the creation of a new version. This can be achieved by clicking the button "New version".'),
   },
   [DepositStatus.DRAFT_WITH_REVIEW]: {
@@ -46,14 +46,14 @@ const STATUSES = {
   },
   [DepositStatus.DRAFT]: {
     color: 'neutral',
-    title: i18next.t('Draft'),
+    title: i18next.t('Unpublished record'),
     message: i18next.t(
       'Once your record is complete, you can publish it to make its contents (e.g., its files) instantly accessible to all BIG-MAP users.'
     ),
   },
   [DepositStatus.NEW_VERSION_DRAFT]: {
     color: 'neutral',
-    title: i18next.t('New version draft'),
+    title: i18next.t('Unpublished new version'),
     message: i18next.t('Once your record is complete, you can publish it to make its contents (e.g., its files) instantly accessible to all BIG-MAP users.'),
   },
 };
