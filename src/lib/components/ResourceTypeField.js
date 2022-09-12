@@ -41,7 +41,7 @@ export class ResourceTypeField extends Component {
    * @param {array} propsOptions - back-end options
    * @returns {array} front-end options
    */
-  createOptions = (propsOptions) => {
+/*  createOptions = (propsOptions) => {
     return propsOptions
       .map((o) => ({ ...o, label: this._label(o) }))
       .sort((o1, o2) => o1.label.localeCompare(o2.label))
@@ -52,6 +52,23 @@ export class ResourceTypeField extends Component {
           text: o.label,
         };
       });
+  };*/
+  createOptions = (propsOptions) => {
+    const frontEndOptions = propsOptions
+      .map((o) => ({ ...o, label: this._label(o) }))
+      .sort((o1, o2) => o1.label.localeCompare(o2.label))
+      .map((o) => {
+        return {
+          value: o.id,
+          icon: o.icon,
+          text: o.label,
+        };
+      });
+
+    // move object with text 'Other' to last position in array
+    frontEndOptions.push(frontEndOptions.splice(frontEndOptions.findIndex((o) => o.text === 'Other'), 1).pop());
+
+    return frontEndOptions;
   };
 
   render() {
