@@ -34,8 +34,8 @@ const STATUSES = {
   },
   [DepositStatus.PUBLISHED]: {
     color: 'positive',
-    title: i18next.t('Published record'),
-    message: i18next.t('Your record is published. You can still modify any of its contents (e.g., its title), with the exception of its files. Adding or removing files requires the creation of a new version. This can be achieved by clicking the button "New version".'),
+    title: i18next.t('Published version'),
+    message: i18next.t('Once the metadata is updated, click "Publish to BIG-MAP" to publish your changes.'),
   },
   [DepositStatus.DRAFT_WITH_REVIEW]: {
     color: 'neutral',
