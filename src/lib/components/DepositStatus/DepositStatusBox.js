@@ -35,7 +35,9 @@ const STATUSES = {
   [DepositStatus.PUBLISHED]: {
     color: 'positive',
     title: i18next.t('Published version'),
-    message: i18next.t('Once the metadata is updated, click "Publish to BIG-MAP" to publish your changes.'),
+    message: i18next.t(
+        'Click "Publish to BIG-MAP" to update this published version of the record with your metadata changes.'
+    ),
   },
   [DepositStatus.DRAFT_WITH_REVIEW]: {
     color: 'neutral',
@@ -46,15 +48,17 @@ const STATUSES = {
   },
   [DepositStatus.DRAFT]: {
     color: 'neutral',
-    title: i18next.t('Unpublished record'),
+    title: i18next.t('Unpublished first version'),
     message: i18next.t(
-      'Once your record is complete, you can publish it to make its contents (e.g., its files) instantly accessible to all BIG-MAP users.'
+      'Click "Save" to create or update this first version of the record without publishing it. \nClick "Publish to BIG-MAP" to also make it visible to other users.'
     ),
   },
   [DepositStatus.NEW_VERSION_DRAFT]: {
     color: 'neutral',
     title: i18next.t('Unpublished new version'),
-    message: i18next.t('Once your record is complete, you can publish it to make its contents (e.g., its files) instantly accessible to all BIG-MAP users.'),
+    message: i18next.t(
+        'Click "Save" to create or update this new version of the record without publishing it. \nClick "Publish to BIG-MAP" to also make it visible to other users.'
+    ),
   },
 };
 
