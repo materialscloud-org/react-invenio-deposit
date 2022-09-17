@@ -78,7 +78,7 @@ const DepositStatusBoxComponent = ({ depositReview, depositStatus }) => {
         >
 {/*          <span>{status.title}</span>*/}
           <Popup
-            trigger={<Icon className="ml-10" name="info circle" />}
+            trigger={<Icon className="ml-10" name="info circle" style={{"color": "rgb(0, 0, 0)"}}/>}
             content={status.message}
           />
         </Grid.Column>
