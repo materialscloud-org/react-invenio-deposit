@@ -45,7 +45,7 @@ export class SaveButtonComponent extends Component {
         icon="save"
         loading={isSubmitting && actionState === DRAFT_SAVE_STARTED}
         labelPosition="left"
-        content={i18next.t('Save')}
+        content={i18next.t('Save as draft')}
         {...uiProps}
       />
     );

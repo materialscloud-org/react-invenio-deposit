@@ -122,7 +122,7 @@ PublishButtonComponent.propTypes = {
 };
 
 PublishButtonComponent.defaultProps = {
-  buttonLabel: i18next.t('Publish to BIG-MAP'),
+  buttonLabel: i18next.t('Publish on archive'),
   publishWithoutCommunity: false,
 };
 

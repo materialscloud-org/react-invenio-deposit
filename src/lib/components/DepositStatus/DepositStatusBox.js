@@ -36,7 +36,7 @@ const STATUSES = {
     color: 'positive',
     title: i18next.t('Published version'),
     message: i18next.t(
-        'Click "Publish to BIG-MAP" to update this published version of the record with your metadata changes.'
+        'Click "Publish on archive" to update the metadata of the publication.'
     ),
   },
   [DepositStatus.DRAFT_WITH_REVIEW]: {
@@ -48,16 +48,16 @@ const STATUSES = {
   },
   [DepositStatus.DRAFT]: {
     color: 'neutral',
-    title: i18next.t('Unpublished first version'),
+    title: i18next.t('Draft'),
     message: i18next.t(
-      'Click "Save" to create or update this first version of the record without publishing it. \nClick "Publish to BIG-MAP" to also make it visible to other users.'
+      'Click "Save as draft" to create or update a private draft. Click "Publish on archive" to publish a record on the archive. Access to publications is restricted to BIG-MAP.'
     ),
   },
   [DepositStatus.NEW_VERSION_DRAFT]: {
     color: 'neutral',
-    title: i18next.t('Unpublished new version'),
+    title: i18next.t('New version'),
     message: i18next.t(
-        'Click "Save" to create or update this new version of the record without publishing it. \nClick "Publish to BIG-MAP" to also make it visible to other users.'
+        'Click "Save as draft" to create or update a private draft. Click "Publish on archive" to publish a record on the archive. Access to publications is restricted to BIG-MAP.'
     ),
   },
 };
@@ -76,7 +76,7 @@ const DepositStatusBoxComponent = ({ depositReview, depositStatus }) => {
           width={isReviewStatus ? 8 : 16}
           textAlign={isReviewStatus ? 'left' : 'center'}
         >
-          <span>{status.title}</span>
+{/*          <span>{status.title}</span>*/}
           <Popup
             trigger={<Icon className="ml-10" name="info circle" />}
             content={status.message}
