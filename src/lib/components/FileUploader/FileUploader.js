@@ -111,7 +111,7 @@ export const FileUploaderComponent = ({
                     filesSize + acceptedFilesSize,
                     decimalSizeDisplay
                   )}
-                  {i18next.t('but the limit is')}
+                  {i18next.t(' but the limit is ')}
                   {humanReadableBytes(quota.maxStorage, decimalSizeDisplay)}.
                 </>
               }
