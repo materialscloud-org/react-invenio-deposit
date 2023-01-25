@@ -122,7 +122,7 @@ PublishButtonComponent.propTypes = {
 };
 
 PublishButtonComponent.defaultProps = {
-  buttonLabel: i18next.t('Publish on archive'),
+  buttonLabel: i18next.t('Share on archive'),
   publishWithoutCommunity: false,
 };
 
