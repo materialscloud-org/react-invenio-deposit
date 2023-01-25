@@ -36,7 +36,7 @@ const STATUSES = {
     color: 'positive',
     title: i18next.t('Published version'),
     message: i18next.t(
-        'Click "Publish on archive" to update the metadata of the publication.'
+        'Click "Share on archive" to update your shared record.'
     ),
   },
   [DepositStatus.DRAFT_WITH_REVIEW]: {
@@ -50,14 +50,14 @@ const STATUSES = {
     color: 'neutral',
     title: i18next.t('Draft'),
     message: i18next.t(
-      'Click "Save as draft" to create or update a private draft. Click "Publish on archive" to publish a record on the archive. Access to publications is restricted to BIG-MAP.'
+      'Click "Save" to create or update a private record. Click "Share on archive" to make your record visible to all authenticated users.'
     ),
   },
   [DepositStatus.NEW_VERSION_DRAFT]: {
     color: 'neutral',
     title: i18next.t('New version'),
     message: i18next.t(
-        'Click "Save as draft" to create or update a private draft. Click "Publish on archive" to publish a record on the archive. Access to publications is restricted to BIG-MAP.'
+        'Click "Save" to create or update a private record. Click "Share on archive" to make your record visible to all authenticated users.'
     ),
   },
 };
