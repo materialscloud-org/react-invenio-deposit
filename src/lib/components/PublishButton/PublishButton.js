@@ -80,7 +80,7 @@ class PublishButtonComponent extends Component {
             closeOnDimmerClick={false}
           >
             <Modal.Header>
-              {i18next.t('Are you sure you want to publish this record?')}
+              {i18next.t('Do you want to share this version?')}
             </Modal.Header>
             {/* the modal text should only ever come from backend configuration */}
             <Modal.Content>
@@ -88,7 +88,7 @@ class PublishButtonComponent extends Component {
                 <p>
                   <Icon name="warning sign" />{' '}
                   {i18next.t(
-                    "Once the record is published you will no longer be able to change the files in the upload! However, you will still be able to update the record's metadata later."
+                    "Once a version of a record is shared, changing its files is no longer permitted. However, modifying its metadata (title, authors, etc) is still allowed."
                   )}
                 </p>
               </Message>
