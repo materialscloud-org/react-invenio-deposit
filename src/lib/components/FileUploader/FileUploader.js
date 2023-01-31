@@ -208,7 +208,7 @@ export const FileUploaderComponent = ({
                 <p>
                   <Icon name="warning sign" />
                   {i18next.t(
-                    'Adding and removing files to a record\'s version are not allowed after it has been shared.'
+                    'Adding and removing files to a record are not allowed after it has been shared.'
                   )}
                 </p>
               </Message>
