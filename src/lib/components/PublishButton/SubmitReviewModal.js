@@ -40,9 +40,13 @@ export class SubmitReviewModal extends Component {
 
     let headerTitle, msgWarningTitle, msgWarningText1, submitBtnLbl;
     if (directPublish) {
-      headerTitle = i18next.t("Publish to community");
+      headerTitle = i18next.t(
+          "Share a record with {{communityTitle}}",
+          { communityTitle }
+      );
       msgWarningTitle = i18next.t(
-        "Before publishing to the community, please read and check the following:"
+        "Once the record is shared, you are no longer able to change its files. However, you are still able to update the record's metadata and create a new version of the record.",
+        { communityTitle }
       );
       msgWarningText1 = i18next.t(
         "Your upload will be <bold>immediately published</bold> in '{{communityTitle}}'. You will no longer be able to change the files in the upload! However, you will still be able to update the record's metadata later.",
@@ -63,8 +67,8 @@ export class SubmitReviewModal extends Component {
     return (
       <Formik
         initialValues={{
-          acceptAccessToRecord: false,
-          acceptAfterPublishRecord: false,
+          acceptAccessToRecord: true,
+          acceptAfterPublishRecord: true,
           reviewComment: initialReviewComment || "",
         }}
         onSubmit={onSubmit}
@@ -90,6 +94,7 @@ export class SubmitReviewModal extends Component {
                     {msgWarningTitle}
                   </p>
                 </Message>
+{/*
                 <Form>
                   <Form.Field>
                     <RadioField
@@ -163,6 +168,7 @@ export class SubmitReviewModal extends Component {
                     />
                   )}
                 </Form>
+*/}
               </Modal.Content>
               <Modal.Actions>
                 <Button
