@@ -90,7 +90,7 @@ class CommunityHeaderComponent extends Component {
                       />
                     }
                   />
-                  {community && (
+{/*                  {community && (
                     <Button
                       basic
                       color="black"
@@ -101,7 +101,7 @@ class CommunityHeaderComponent extends Component {
                       icon="close"
                       disabled={disableCommunitySelectionButton}
                     />
-                  )}
+                  )}*/}
                 </>
               )}
             </div>
