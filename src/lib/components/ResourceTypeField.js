@@ -6,12 +6,11 @@
 // React-Invenio-Deposit is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import _get from 'lodash/get';
-import { FieldLabel, SelectField } from 'react-invenio-forms';
-import { i18next } from '@translations/i18next';
-import { Icon } from 'semantic-ui-react';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import _get from "lodash/get";
+import { FieldLabel, SelectField } from "react-invenio-forms";
+import { i18next } from "@translations/i18next";
 
 export class ResourceTypeField extends Component {
   groupErrors = (errors, fieldPath) => {
@@ -29,10 +28,7 @@ export class ResourceTypeField extends Component {
    * @returns {string} label
    */
   _label = (option) => {
-    return (
-      option.type_name +
-      (option.subtype_name ? ' / ' + option.subtype_name : '')
-    );
+    return option.type_name + (option.subtype_name ? " / " + option.subtype_name : "");
   };
 
   /**
@@ -41,7 +37,7 @@ export class ResourceTypeField extends Component {
    * @param {array} propsOptions - back-end options
    * @returns {array} front-end options
    */
-/*  createOptions = (propsOptions) => {
+  createOptions = (propsOptions) => {
     return propsOptions
       .map((o) => ({ ...o, label: this._label(o) }))
       .sort((o1, o2) => o1.label.localeCompare(o2.label))
@@ -52,23 +48,6 @@ export class ResourceTypeField extends Component {
           text: o.label,
         };
       });
-  };*/
-  createOptions = (propsOptions) => {
-    const frontEndOptions = propsOptions
-      .map((o) => ({ ...o, label: this._label(o) }))
-      .sort((o1, o2) => o1.label.localeCompare(o2.label))
-      .map((o) => {
-        return {
-          value: o.id,
-          icon: o.icon,
-          text: o.label,
-        };
-      });
-
-    // move object with text 'Other' to last position in array
-    frontEndOptions.push(frontEndOptions.splice(frontEndOptions.findIndex((o) => o.text === 'Other'), 1).pop());
-
-    return frontEndOptions;
   };
 
   render() {
@@ -77,10 +56,8 @@ export class ResourceTypeField extends Component {
     return (
       <SelectField
         fieldPath={fieldPath}
-        label={
-          <FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />
-        }
-        optimized={true}
+        label={<FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />}
+        optimized
         options={frontEndOptions}
         selectOnBlur={false}
         {...restProps}
@@ -90,7 +67,7 @@ export class ResourceTypeField extends Component {
 }
 
 ResourceTypeField.propTypes = {
-  fieldPath: PropTypes.string,
+  fieldPath: PropTypes.string.isRequired,
   label: PropTypes.string,
   labelIcon: PropTypes.string,
   labelclassname: PropTypes.string,
@@ -106,8 +83,8 @@ ResourceTypeField.propTypes = {
 };
 
 ResourceTypeField.defaultProps = {
-  fieldPath: 'metadata.resource_type',
-  label: i18next.t('Resource type'),
-  labelIcon: 'tag',
-  labelclassname: 'field-label-class',
+  label: i18next.t("Resource type"),
+  labelIcon: "tag",
+  labelclassname: "field-label-class",
+  required: false,
 };

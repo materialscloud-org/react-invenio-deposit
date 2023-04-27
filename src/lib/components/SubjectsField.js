@@ -6,21 +6,21 @@
 // React-Invenio-Deposit is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { FieldLabel, GroupField, RemoteSelectField } from 'react-invenio-forms';
-import { Form } from 'semantic-ui-react';
-import { Field, getIn } from 'formik';
-import { i18next } from '@translations/i18next';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { FieldLabel, GroupField, RemoteSelectField } from "react-invenio-forms";
+import { Form } from "semantic-ui-react";
+import { Field, getIn } from "formik";
+import { i18next } from "@translations/i18next";
 
 export class SubjectsField extends Component {
   state = {
-    limitTo: 'all',
+    limitTo: "all",
   };
 
   serializeSubjects = (subjects) =>
     subjects.map((subject) => {
-      const scheme = subject.scheme ? `(${subject.scheme}) ` : '';
+      const scheme = subject.scheme ? `(${subject.scheme}) ` : "";
       return {
         text: scheme + subject.subject,
         value: subject.subject,
@@ -31,8 +31,9 @@ export class SubjectsField extends Component {
     });
 
   prepareSuggest = (searchQuery) => {
-    const limitTo = this.state.limitTo;
-    const prefix = limitTo === 'all' ? '' : `${limitTo}:`;
+    const { limitTo } = this.state;
+
+    const prefix = limitTo === "all" ? "" : `${limitTo}:`;
     return `${prefix}${searchQuery}`;
   };
 
@@ -48,16 +49,16 @@ export class SubjectsField extends Component {
       limitToOptions,
     } = this.props;
     return (
-/*      <GroupField className="main-group-field">
+      <GroupField className="main-group-field">
         <Form.Field width={5} className="subjects-field">
           <FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />
           <GroupField>
             <Form.Field
               width={8}
-              style={{ marginBottom: 'auto', marginTop: 'auto' }}
+              style={{ marginBottom: "auto", marginTop: "auto" }}
               className="p-0"
             >
-              {i18next.t('Suggest from')}
+              {i18next.t("Suggest from")}
             </Form.Field>
             <Form.Dropdown
               className="p-0"
@@ -68,9 +69,9 @@ export class SubjectsField extends Component {
               selection
               width={8}
             />
-          </GroupField>*!/}
+          </GroupField>
         </Form.Field>
-        <Field name={this.props.fieldPath}>
+        <Field name={fieldPath}>
           {({ form: { values } }) => {
             return (
               <RemoteSelectField
@@ -78,7 +79,7 @@ export class SubjectsField extends Component {
                 fieldPath={fieldPath}
                 initialSuggestions={getIn(values, fieldPath, [])}
                 multiple={multiple}
-                noQueryMessage={i18next.t('Search or create subjects...')}
+                noQueryMessage={i18next.t("Search or create subjects...")}
                 placeholder={placeholder}
                 preSearchChange={this.prepareSuggest}
                 required={required}
@@ -99,62 +100,25 @@ export class SubjectsField extends Component {
                   );
                 }}
                 value={getIn(values, fieldPath, []).map((val) => val.subject)}
-                /!*label={
-                  <label className="mobile-hidden">&nbsp;</label>
-                }*!/ /!** For alignment purposes *!/
+                label={
+                  <>
+                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                    <label className="mobile-hidden">&nbsp;</label>
+                  </>
+                } /** For alignment purposes */
                 allowAdditions
-                /!*width={11}*!/
+                width={11}
               />
             );
           }}
         </Field>
-      </GroupField>*/
-      <div>
-        <FieldLabel htmlFor={fieldPath} icon={labelIcon} label={label} />
-        <Field name={this.props.fieldPath}>
-          {({ form: { values } }) => {
-            return (
-              <RemoteSelectField
-                clearable={clearable}
-                fieldPath={fieldPath}
-                initialSuggestions={getIn(values, fieldPath, [])}
-                multiple={multiple}
-                noQueryMessage={i18next.t('Search or create subjects...')}
-                placeholder={placeholder}
-                preSearchChange={this.prepareSuggest}
-                required={required}
-                serializeSuggestions={this.serializeSubjects}
-                serializeAddedValue={(value) => ({
-                  text: value,
-                  value: value,
-                  key: value,
-                  subject: value,
-                })}
-                suggestionAPIUrl="/api/subjects"
-                onValueChange={({ formikProps }, selectedSuggestions) => {
-                  formikProps.form.setFieldValue(
-                    fieldPath,
-                    // save the suggestion objects so we can extract information
-                    // about which value added by the user
-                    selectedSuggestions
-                  );
-                }}
-                value={getIn(values, fieldPath, []).map((val) => val.subject)}
-                /*label={
-                  <label className="mobile-hidden">&nbsp;</label>
-                }*/ /** For alignment purposes */
-                allowAdditions
-                /*width={11}*/
-              />
-            );
-          }}
-        </Field>
-      </div>
+      </GroupField>
     );
   }
 }
 
 SubjectsField.propTypes = {
+  limitToOptions: PropTypes.array.isRequired,
   fieldPath: PropTypes.string.isRequired,
   label: PropTypes.string,
   labelIcon: PropTypes.string,
@@ -162,20 +126,13 @@ SubjectsField.propTypes = {
   multiple: PropTypes.bool,
   clearable: PropTypes.bool,
   placeholder: PropTypes.string,
-  initialOptions: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string,
-      value: PropTypes.string,
-      text: PropTypes.string,
-    })
-  ),
 };
 
 SubjectsField.defaultProps = {
-  fieldPath: 'metadata.subjects',
-  label: i18next.t('Keywords'),
-  labelIcon: 'tag',
+  required: false,
+  label: i18next.t("Keywords and subjects"),
+  labelIcon: "tag",
   multiple: true,
   clearable: true,
-  placeholder: i18next.t('Search for a keyword by name'),
+  placeholder: i18next.t("Search for a subject by name"),
 };

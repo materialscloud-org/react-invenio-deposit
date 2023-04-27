@@ -1,0 +1,839 @@
+# 
+# Translators:
+# Martin Jantson <martinjantson97@gmail.com>, 2022
+# Mart Jantson, 2022
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2022-10-28T08:02:09.099Z\n"
+"PO-Revision-Date: 2021-06-29 13:20+0000\n"
+"Last-Translator: Mart Jantson, 2022\n"
+"Language-Team: Estonian (https://www.transifex.com/inveniosoftware/teams/23537/et/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: et\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"mime-version: 1.0\n"
+
+msgid "Embargo until"
+msgstr "Embargo kuni"
+
+msgid "YYYY-MM-DD"
+msgstr "AAAA-KK-PP"
+
+msgid "The full record is restricted."
+msgstr "Täiskirje on piiratud ligipääsuga."
+
+msgid "Embargoed (full record)"
+msgstr "Embargo all (täiskirje)"
+
+msgid "Embargoed (files-only)"
+msgstr "Embargo all (ainult failid)"
+
+msgid ""
+"The record is publicly accessible. On <bold>{{ date }}</bold> the files will"
+" automatically be made publicly accessible. Until then, the files can "
+"<bold>only</bold> be accessed by <bold>users specified</bold> in the "
+"permissions."
+msgstr ""
+"Kirje on avalikult ligipääsetav. <bold>{{ date }}</bold> tehakse failid "
+"automaatselt avalikult ligipääsetavaks. Seni saavad failidele ligi "
+"<bold>ainult</bold> ligipääsuloaga <bold>määratud kasutajad</bold>."
+
+msgid "The record has no files."
+msgstr "Antud kirjel failid puuduvad."
+
+msgid ""
+"On <bold>{{ date }}</bold> the record will automatically be made publicly "
+"accessible. Until then, the record can <bold>only</bold> be accessed by "
+"<bold>users specified</bold> in the permissions."
+msgstr ""
+"<bold>{{ date }}</bold> tehakse kirje avalikult ligipääsetavaks. Seni saavad"
+" kirjele ligi <bold>ainult</bold> ligipääsuloaga<bold>määratud "
+"kasutajad</bold>."
+
+msgid "Public"
+msgstr "Avalik"
+
+msgid "Restricted"
+msgstr "Piiratud"
+
+msgid "The record and files are publicly accessible."
+msgstr "Kirje ja failid on avalikult kättesaadavad."
+
+msgid "The record is publicly accessible."
+msgstr "Kirje on avaliku juurdepääsuga."
+
+msgid "Public with restricted files"
+msgstr "Avalik, aga failidele juurdepääs on piiratud"
+
+msgid ""
+"The record can <1>only</1> be accessed by <3>users specified</3> in the "
+"permissions."
+msgstr ""
+"Kirjele saavad ligi <1>ainult</1> ligipääsuõigustes <3>määratud "
+"kasutajad</3>."
+
+msgid "Full record"
+msgstr "Täiskirje"
+
+msgid "Files only"
+msgstr "Ainult failid"
+
+msgid "Apply an embargo"
+msgstr "Pane embargo alla"
+
+msgid "Embargo reason"
+msgstr "Embargo põhjus"
+
+msgid "Optionally, describe the reason for the embargo."
+msgstr "Soovi korral kirjelda embargo alla panemise põhjust."
+
+msgid "Embargo was lifted on {{fmtDate}}."
+msgstr "Embargo lõpetati {{fmtDate}}."
+
+msgid "Reason"
+msgstr "Põhjus"
+
+msgid ""
+"Record or files protection must be <1>restricted</1> to apply an embargo."
+msgstr ""
+"Embargo kehtestamiseks peab kirjele või failidele juurdepääs olema "
+"<1>piiratud</1>."
+
+msgid "Options"
+msgstr "Valikud"
+
+msgid "Add description"
+msgstr "Lisa kirjeldus"
+
+msgid "Additional Description"
+msgstr "Täiendav kirjeldus"
+
+msgid "Type"
+msgstr "Tüüp"
+
+msgid "Language"
+msgstr "Keel"
+
+msgid "Select language"
+msgstr "Vali keel"
+
+msgid "Add titles"
+msgstr "Lisa pealkirju"
+
+msgid "Search or create affiliation'"
+msgstr "Otsi või lisa seos"
+
+msgid "Affiliations"
+msgstr "Seosed"
+
+msgid "Search for affiliations.."
+msgstr "Otsi seoseid..."
+
+msgid "Add creator"
+msgstr "Lisa looja"
+
+msgid "Edit"
+msgstr "Redigeeri"
+
+msgid "Remove"
+msgstr "Eemalda"
+
+msgid "Name identifiers"
+msgstr "Nime identifikaatorid"
+
+msgid "e.g. ORCID, ISNI or GND."
+msgstr "nt ORCID, ISNI või GND."
+
+msgid "Type the value of an identifier..."
+msgstr "Sisesta identifikaator..."
+
+msgid "Save and add another"
+msgstr "Salvesta ja lisa veel üks"
+
+msgid "Family name is a required field."
+msgstr "Perekonnanime väli on kohustuslik."
+
+msgid "Name is a required field."
+msgstr "Nime väli on kohustuslik."
+
+msgid "Role is a required field."
+msgstr "Rolli väli on kohustuslik."
+
+msgid "Added"
+msgstr "Lisatud"
+
+msgid "Person"
+msgstr "Isik"
+
+msgid "Organization"
+msgstr "Organisatsioon"
+
+msgid "Family name"
+msgstr "Perekonnanimi"
+
+msgid "Name"
+msgstr "Nimetus"
+
+msgid "Organization name"
+msgstr "Organisatsiooni nimi"
+
+msgid "Role"
+msgstr "Roll"
+
+msgid "Select role"
+msgstr "Vali roll"
+
+msgid "Cancel"
+msgstr "Tühista"
+
+msgid "Save"
+msgstr "Salvesta"
+
+msgid "Add date"
+msgstr "Lisa kuupäev"
+
+msgid "Format: DATE or DATE/DATE where DATE is YYYY or YYYY-MM or YYYY-MM-DD."
+msgstr ""
+"Formaat KUUPÄEV või KUUPÄEV/KUUPÄEV, kus KUUPÄEV on AAAA või AAAA-KK või "
+"AAA-KK-PP."
+
+msgid "Date"
+msgstr "Kuupäev"
+
+msgid "Description"
+msgstr "Kirjeldus"
+
+msgid "Dates"
+msgstr "Kuupäevad"
+
+msgid "YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD"
+msgstr "AAAA-KK-PP või AAAA-KK-PP/AAAA-KK-PP"
+
+msgid "discard changes"
+msgstr "loobu muudatustest"
+
+msgid "discard version"
+msgstr "loobu versioonist"
+
+msgid "delete"
+msgstr "kustuta"
+
+msgid "Are you sure you want to discard the changes to this draft?"
+msgstr "Kas oled kindel, et soovid selle mustandi muudatustest loobuda?"
+
+msgid "Are you sure you want to delete this new version?"
+msgstr "Kas oled kindel, et soovid selle uue versiooni kustutada?"
+
+msgid "Are you sure you want to delete this draft?"
+msgstr "Oled kindel, et soovid selle mustandi kustutada?"
+
+msgid "New version"
+msgstr "Uus versioon"
+
+msgid "New upload"
+msgstr "Uus üleslaadimine"
+
+msgid "Edit upload"
+msgstr "Redigeeri üleslaadimist"
+
+msgid "Uploading the selected files would result in"
+msgstr "Valitud failide üles laadimise tulemus on"
+
+msgid "but the limit is"
+msgstr "aga limiit on"
+
+msgid "You can import files from the previous version."
+msgstr "Võid importida eelmise versiooni faile."
+
+msgid ""
+"File addition, removal or modification are not allowed after you have "
+"published your upload."
+msgstr ""
+"Failide lisamine, eemaldamine või muutmine ei ole lubatud pärast "
+"üleslaadimise avaldamist."
+
+msgid "You must create a new version to add, modify or delete files."
+msgstr ""
+"Pead looma uue versiooni, kui soovid faile lisada, muuta või kustutada."
+
+msgid "Upload files"
+msgstr "Lae failid üles"
+
+msgid "Import files"
+msgstr "Impordi failid"
+
+msgid "Preview"
+msgstr "Eelvaade"
+
+msgid "Filename"
+msgstr "Faili nimi"
+
+msgid "Size"
+msgstr "Suurus"
+
+msgid "Progress"
+msgstr "Progress"
+
+msgid ""
+"This is the file fingerprint (MD5 checksum), which can be used to verify the"
+" file integrity."
+msgstr ""
+"See on faili sõrmejälg (MD5 checksum), mida saab kasutada faili tervikluse "
+"verifitseerimiseks."
+
+msgid "Pending"
+msgstr "Ootel"
+
+msgid "or"
+msgstr "või"
+
+msgid "Metadata-only record"
+msgstr "Ainult metaandmete kirje"
+
+msgid "Storage available"
+msgstr "Vaba salvestusruum"
+
+msgid "{{length}} out of {{maxfiles}} files"
+msgstr "{{length}} {{maxfiles}} failist"
+
+msgid "out of"
+msgstr " millestki"
+
+msgid "Files"
+msgstr "Failid"
+
+msgid "Resource type"
+msgstr "Ressursi liik"
+
+msgid "Title"
+msgstr "Pealkiri"
+
+msgid "Additional titles"
+msgstr "Täiendavad pealkirjad"
+
+msgid "Publication date"
+msgstr "Avaldamise kuupäev"
+
+msgid "Creators"
+msgstr "Loojad"
+
+msgid "Contributors"
+msgstr "Kaastöölised"
+
+msgid "Additional descriptions"
+msgstr "Täiendavad kirjeldused"
+
+msgid "Licenses"
+msgstr "Litsentsid"
+
+msgid "Languages"
+msgstr "Keeled"
+
+msgid "Version"
+msgstr "Versioon"
+
+msgid "Publisher"
+msgstr "Avaldaja"
+
+msgid "Related works"
+msgstr "Seotud tööd"
+
+msgid "Alternate identifiers"
+msgstr "Alternatiivsed identifikaatorid"
+
+msgid "Record successfully saved."
+msgstr "Kirje salvestamine õnnestus."
+
+msgid "Record saved with validation errors:"
+msgstr "Kirje salvestati valideerimise vigadega:"
+
+msgid ""
+"Oops, something went wrong! The draft was not saved. Please try again. If "
+"the problem persists, contact user support."
+msgstr ""
+"Oih, midagi läks valesti! Mustandit ei salvestatud. Palun proovi uuesti. Kui"
+" probleem ei kao, võta ühendust kasutajatoega."
+
+msgid ""
+"Oops, something went wrong! The draft was not published. Please try again. "
+"If the problem persists, contact user support."
+msgstr ""
+"Oih, midagi läks valesti! Mustandit ei avaldatud. Palun proovi uuesti. Kui "
+"probleem ei kao, võta ühendust kasutajatoega."
+
+msgid ""
+"Oops, something went wrong! The draft was not submitted for review. Please "
+"try again. If the problem persists, contact user support."
+msgstr ""
+"Oih, midagi läks valesti! Mustandit ei saadetud ülevaatamisele. Palun proovi"
+" uuesti. Kui probleem ei kao, võta ühendust kasutajatoega."
+
+msgid ""
+"Oops, something went wrong! The draft was not deleted. Please try again. If "
+"the problem persists, contact user support."
+msgstr ""
+"Oih, midagi läks valesti! Mustandit ei kustutatud. Palun proovi uuesti. Kui "
+"probleem ei kao, võta ühendust kasutajatoega."
+
+msgid ""
+"Oops, something went wrong! The draft cannot be previewed. Please try again."
+" If the problem persists, contact user support."
+msgstr ""
+"Oih, midagi läks valesti! Mustandi eelvaadet ei ole võimalik kuvada. Palun "
+"proovi uuesti. Kui probleem ei kao, võta ühendust kasutajatoega."
+
+msgid ""
+"Oops, something went wrong! The identifier was not reserved. Please try "
+"again. If the problem persists, contact user support."
+msgstr ""
+"Oih, midagi läks valesti! Identifikaatorit ei reserveeritud. Palun proovi "
+"uuesti. Kui probleem ei kao, võta ühendust kasutajatoega."
+
+msgid ""
+"Oops, something went wrong! The identifier was not discarded. Please try "
+"again. If the problem persists, contact user support."
+msgstr ""
+"Oih, midagi läks valesti! Identifikaatorist ei õnnestunud eemaldada. Palun "
+"proovi uuesti. Kui probleem ei kao, võta ühendust kasutajatoega."
+
+msgid ""
+"Oops, something went wrong! The draft could not be saved before uploading "
+"the file. Please try again. If the problem persists, contact user support."
+msgstr ""
+"Oih, midagi läks valesti! Mustandit ei õnnestunud enne faili üles laadimist "
+"salvestada. Palun proovi uuesti. Kui probleem ei kao, võta ühendust "
+"kasutajatoega."
+
+msgid "Add award"
+msgstr "Lisa auhind"
+
+msgid "Add identifier"
+msgstr "Lisa identifikaator"
+
+msgid "Identifier"
+msgstr "Identifikaator"
+
+msgid "Scheme"
+msgstr "Skeem"
+
+msgid "Search for languages..."
+msgstr "Otsi keeli..."
+
+msgid "Search for a language by name (e.g \"eng\", \"fr\" or \"Polish\")"
+msgstr "Otsi keeli nende nime järgi (nt \"eng\", \"fr\" või \"Polish\")"
+
+msgid "Add standard"
+msgstr "Lisa standard"
+
+msgid "Add custom"
+msgstr "Lisa kohandus"
+
+msgid "Read more"
+msgstr "Loe rohkem"
+
+msgid "Title is a required field."
+msgstr "Pealkirja väli on nõutud."
+
+msgid "Link must be a valid URL"
+msgstr "Link peab olema kehtiv URL"
+
+msgid "Recommended"
+msgstr "Soovitatud"
+
+msgid "All"
+msgstr "Kõik"
+
+msgid "Data"
+msgstr "Andmed"
+
+msgid "Software"
+msgstr "Tarkvara"
+
+msgid "License title"
+msgstr "Litsentsi pealkiri"
+
+msgid "Link"
+msgstr "Link"
+
+msgid "License link"
+msgstr "Litsentsi link"
+
+msgid "Add license"
+msgstr "Lisa litsents"
+
+msgid "Change license"
+msgstr "Muuda litsentsi"
+
+msgid "You don't have permissions to create a new version."
+msgstr "Sul ei ole õigusi uue versiooni loomiseks."
+
+msgid ""
+"In case your upload was already published elsewhere, please use the date of "
+"the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
+"use DATE/DATE, e.g. 1939/1945."
+msgstr ""
+"Kui sinu üleslaetav fail on juba kuskil avaldatud, palun kasuta esimese "
+"avaldamise kuupäeva. Formaat: AAAA-KK-PP, AAAA-KK või AAAA. Intervallide "
+"jaoks kasuta KUUPÄEV/KUUPÄEV, nt 1939/1945."
+
+msgid ""
+"YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD for intervals. MM and DD are optional."
+msgstr ""
+"AAAA-KK-PP või AAAA-KK-PP/AAAA-KK-PP intervallide jaoks. KK ja PP on "
+"valikulised."
+
+msgid ""
+"The publisher is used to formulate the citation, so consider the prominence "
+"of the role."
+msgstr ""
+"Tsiteeringu formuleerimiseks kasutatakse kirjastajat, seega arvesta rolli "
+"esiletõstmisega."
+
+msgid ""
+"Specify identifiers of related works. Supported identifiers include DOI, "
+"Handle, ARK, PURL, ISSN, ISBN, PubMed ID, PubMed Central ID, ADS "
+"Bibliographic Code, arXiv, Life Science Identifiers (LSID), EAN-13, ISTC, "
+"URNs, and URLs."
+msgstr ""
+"Täpsusta seotud tööde identifikaatoreid. Toetatud idendifikaatorid on DOI, "
+"Handle, ARK, PURL, ISSN, ISBN, PubMed ID, PubMed Central ID, ADS "
+"Bibliographic Code, arXiv, Life Science Identifiers (LSID), EAN-13, ISTC, "
+"URN ja URL."
+
+msgid "Add related work"
+msgstr "Lisa seotud tööd"
+
+msgid "Relation"
+msgstr "Seotus"
+
+msgid "Select relation..."
+msgstr "Vali seotus..."
+
+msgid "Save draft"
+msgstr "Salvesta mustand"
+
+msgid "Suggest from"
+msgstr "Soovita"
+
+msgid "Subjects"
+msgstr "Teemad"
+
+msgid "Search for a subject by name"
+msgstr "Otsi teemat nime järgi"
+
+msgid ""
+"Mostly relevant for software and dataset uploads. A semantic version string "
+"is preferred see<1> semver.org</1>, but any version string is accepted."
+msgstr ""
+"Peamiselt oluline tarkvara ja andmekogumite üleslaadimise jaoks. Semantiline"
+" versioonimine on eelistatud, vaata<1>semver.org</1>, kuid vastuvõetavad on "
+"ka muud versioonistringid."
+
+msgid "Do you already have a {{pidLabel}} for this upload?"
+msgstr "Kas sul on juba {{pidLabel}} selle üleslaadimise jaoks?"
+
+msgid "Yes"
+msgstr "Jah"
+
+msgid "No"
+msgstr "Ei"
+
+msgid "e.g. ROR, ISNI or GND."
+msgstr "nt ROR, ISNI või GND."
+
+msgid "The following files already exist"
+msgstr "Järgnevad failid on juba olemas"
+
+msgid "Disable files for this record"
+msgstr "Keela failid selle kirje puhul"
+
+msgid "DOI"
+msgstr "DOI"
+
+msgid "Search"
+msgstr "Otsi"
+
+msgid "Search or create subjects..."
+msgstr "Otsi või loo teemasid..."
+
+msgid "Edit creator"
+msgstr "Muuda loojat"
+
+msgid "Add {{mode}} license"
+msgstr "Lisa {{mode}} litsents"
+
+msgid "Change {{mode}} license"
+msgstr "Muuda {{mode}} litsentsi"
+
+msgid "My communities"
+msgstr "Minu grupid"
+
+msgid "Search in all communities"
+msgstr "Otsi kõikidest gruppidest"
+
+msgid "Search in my communities"
+msgstr "Otsi minu gruppidest"
+
+msgid "Search for persons by name, identifier, or affiliation..."
+msgstr "Otsi isikuid nime, identifikaatori või seose järgi..."
+
+msgid "Select a community"
+msgstr "Vali grupp"
+
+msgid "Submit review"
+msgstr "Lisa arvustus"
+
+msgid "Publish"
+msgstr "Avalda"
+
+msgid "Are you sure you want to publish this record?"
+msgstr "Kas oled kindel, et soovid selle kirje avaldada?"
+
+msgid "The draft was not published. Record saved with validation errors:"
+msgstr "Mustandit ei avaldatud. Kirje salvestati valideerimise vigadega:"
+
+msgid ""
+"The draft was not submitted for review. Record saved with validation errors:"
+msgstr ""
+"Mustandit ei saadetud ülevaatamisele. Kirje salvestati valideerimise "
+"vigadega:"
+
+msgid "In review"
+msgstr "Ülevaatamisel"
+
+msgid ""
+"Community curators will review your upload. Once accepted, it will be "
+"published."
+msgstr ""
+"Grupi kuraatorid vaatavad sinu poolt üles laaditu üle. Kui kõik sobib, siis "
+"see avaldatakse."
+
+msgid "Declined"
+msgstr "Tagasi lükatud"
+
+msgid "The request to submit this upload to the community was declined."
+msgstr "Taotlus lisada sinu poolt üles laaditu gruppi lükati tagasi."
+
+msgid "Expired"
+msgstr "Aegunud"
+
+msgid "The request to submit this upload to the community has expired."
+msgstr "Taotlus lisada sinu poolt üles laaditu gruppi on aegunud."
+
+msgid "Published"
+msgstr "Avaldatud"
+
+msgid "Your upload is published."
+msgstr "Sinu poolt üles laaditu on avaldatud."
+
+msgid "Draft"
+msgstr "Mustand"
+
+msgid ""
+"Once your upload is complete, you can submit it for review to the community "
+"curators."
+msgstr ""
+"Kui üles laadimine on valmis, saad selle saata grupi kuraatoritele üle "
+"vaatamiseks."
+
+msgid ""
+"Once your upload is complete, you can publish or submit it for review to the"
+" community curators."
+msgstr ""
+"Kui üles laadimine on valmis, saad selle avaldada või saata selle grupi "
+"kuraatoritele üle vaatamiseks."
+
+msgid "New version draft"
+msgstr "Uue versiooni mustand"
+
+msgid "Once your upload is complete, you can publish it."
+msgstr "Kui üles laadimine on valmis, saad selle avaldada."
+
+msgid "View request"
+msgstr "Vaata taotlust"
+
+msgid "Submitted for review"
+msgstr "Ülevaatamisele saadetud"
+
+msgid "Change community"
+msgstr "Muuda gruppi"
+
+msgid "Publish without community"
+msgstr "Avalda ilma grupita"
+
+msgid "Select the community where you want to submit your record."
+msgstr "Vali grupp, kuhu tahad oma kirje lisada."
+
+msgid "View community"
+msgstr "Vaata gruppi"
+
+msgid "Opens in new tab"
+msgstr "Avaneb uues sakis"
+
+msgid "Selected"
+msgstr "Valitud"
+
+msgid "Select"
+msgstr "Vali"
+
+msgid "Select "
+msgstr "Vali"
+
+msgid "Change"
+msgstr "Muuda"
+
+msgid "Search for a funder by name"
+msgstr "Otsi rahastajat nime järgi"
+
+msgid "Funder"
+msgstr "Rahastaja"
+
+msgid "Search for funder..."
+msgstr "Otsi rahastajat..."
+
+msgid "Award information"
+msgstr "Grandi info"
+
+msgid "Number"
+msgstr "Number"
+
+msgid "Award number"
+msgstr "Grandi number"
+
+msgid "Award Title"
+msgstr "Grandi pealkiri"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Award URL"
+msgstr "Grandi URL"
+
+msgid "Add standard award"
+msgstr "Lisage standardauhind"
+
+msgid "Add custom award"
+msgstr "Lisa kohandatud autasu"
+
+msgid "Change award"
+msgstr "Muuda autasu"
+
+msgid "Did not find your award? "
+msgstr "Ei leidnud oma autasu?"
+
+msgid "Add a custom award."
+msgstr "Lisa kohandatud autasu."
+
+msgid ""
+"Once the record is published you will no longer be able to change the files "
+"in the upload! However, you will still be able to update the record's "
+"metadata later."
+msgstr ""
+"Kui kirje on avaldatud, ei ole võimalik enam selle faile muuta! Saad aga "
+"hiljem kirje metaandmeid uuendada."
+
+msgid "Submit for review"
+msgstr "Saada ülevaatamisele"
+
+msgid "optional"
+msgstr "valikuline"
+
+msgid "Open external link"
+msgstr "Ava väline link"
+
+msgid "Search for awards"
+msgstr "Otsi autasusid"
+
+msgid ""
+"The record is publicly accessible. The files can <1>only</1> be accessed by "
+"<4>users specified</4> in the permissions."
+msgstr ""
+"Kirje on avalikult kättesaadav. Failidele pääsevad ligi <1>ainult</1> "
+"<4>määratud kasutajad</4>."
+
+msgid "Format"
+msgstr "Vorming"
+
+msgid "The files of this record are restricted."
+msgstr "Selle kirje failid on piiratud."
+
+msgid "Remove field"
+msgstr "Eemalda väli"
+
+msgid ""
+"Did not find a community that fits you? Upload without a community or "
+"<2>create your own.</2>"
+msgstr ""
+"Kas te ei leidnud teile sobivat kogukonda? Laadige üles ilma kogukonnata "
+"või<2> looge oma</2>."
+
+msgid "Given names"
+msgstr "Antud nimed"
+
+msgid "Couldn't find your person? You can <2>create a new entry</2>."
+msgstr "Kas te ei leidnud oma inimest? Saate <2>luua uue kirje</2>."
+
+msgid "Drag and drop files"
+msgstr "tõmmake ja pange failid"
+
+msgid "Default preview"
+msgstr "Vaikimisi eelvaade"
+
+msgid "Delete file"
+msgstr "Kustuta fail"
+
+msgid "This is a Metadata-only record."
+msgstr "See on ainult metaandmeid sisaldav kirje."
+
+msgid ""
+"Oops, something went wrong! Importing files from the previous version "
+"failed. Please try again. If the problem persists, contact user support."
+msgstr ""
+"Oops! Midagi läks valesti! Failide importimine eelmisest versioonist "
+"ebaõnnestus. Palun proovi uuesti. Kui probleem püsib, võtke ühendust "
+"kasutajatoega."
+
+msgid "Funder is required."
+msgstr "Rahastaja on vajalik."
+
+msgid "Title must be set alongside number."
+msgstr "Pealkiri tuleb määrata numbri kõrvale."
+
+msgid "Number must be set alongside title."
+msgstr "Pealkirja kõrvale tuleb määrata number."
+
+msgid "URL must be valid."
+msgstr "URL peab olema kehtiv."
+
+msgid "URL must be set alongside title and number."
+msgstr "URL tuleb määrata pealkirja ja numbri kõrvale."
+
+msgid "Identifiers"
+msgstr "Identifikaatorid"
+
+msgid "You must accept this."
+msgstr "Peate sellega leppima."
+
+msgid "Before requesting review please read and check the following:"
+msgstr "Enne ülevaatuse taotlemist lugege läbi ja kontrollige järgmist."
+
+msgid ""
+"The '{{communityTitle}}' curators will have access to\n"
+"                 <bold>view</bold> and <bold>edit</bold> your\n"
+"                 upload's metadata and files."
+msgstr ""
+"Grupi '{{communityTitle}}' kuraatoritel on ligipääsuõiguse, et\n"
+"                 <bold>vaadata</bold> ja <bold>muuta</bold> sinu\n"
+"                 üles laaditud faile ja nende metaandmeid."
+
+msgid ""
+"If your upload is accepted by the community curators, it will be "
+"<bold>immediately published</bold>. Before that, you will still be able to "
+"modify metadata and files of this upload."
+msgstr ""
+"Kui kogukonna kuraatorid nõustuvad teie üleslaadimisega, <bold>avaldatakse "
+"see kohe</bold>. Enne seda saate siiski selle üleslaadimise metaandmeid ja "
+"faile muuta."

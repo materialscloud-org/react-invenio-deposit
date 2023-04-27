@@ -5,19 +5,14 @@
 //
 // React-Invenio-Deposit is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { Field } from 'formik';
-import { FieldLabel } from 'react-invenio-forms';
-import { Card, Divider, Form, Header } from 'semantic-ui-react';
-import { i18next } from '@translations/i18next';
-import {
-  MetadataAccess,
-  FilesAccess,
-  EmbargoAccess,
-  AccessMessage,
-} from './Access';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { Field } from "formik";
+import { FieldLabel } from "react-invenio-forms";
+import { Card, Divider, Form, Header } from "semantic-ui-react";
+import { i18next } from "@translations/i18next";
+import { MetadataAccess, FilesAccess, EmbargoAccess, AccessMessage } from "./Access";
 
 export class AccessRightFieldCmp extends Component {
   /** Top-level Access Right Component */
@@ -28,10 +23,13 @@ export class AccessRightFieldCmp extends Component {
       formik, // this is our access to the shared current draft
       label,
       labelIcon,
+      showMetadataAccess,
       community,
     } = this.props;
 
-    const communityAccess = community?.access.visibility || 'public';
+    const isGhostCommunity = community?.is_ghost === true;
+    const communityAccess =
+      (community && !isGhostCommunity && community.access.visibility) || "public";
     const isMetadataOnly = !formik.form.values.files.enabled;
 
     return (
@@ -43,13 +41,15 @@ export class AccessRightFieldCmp extends Component {
             </Card.Header>
           </Card.Content>
           <Card.Content>
-            <MetadataAccess
-              recordAccess={formik.field.value.record}
-              communityAccess={communityAccess}
-            />
-
-            <Divider hidden />
-
+            {showMetadataAccess && (
+              <>
+                <MetadataAccess
+                  recordAccess={formik.field.value.record}
+                  communityAccess={communityAccess}
+                />
+                <Divider hidden />
+              </>
+            )}
             <FilesAccess
               access={formik.field.value}
               accessCommunity={communityAccess}
@@ -68,7 +68,7 @@ export class AccessRightFieldCmp extends Component {
           </Card.Content>
           <Card.Content>
             <Card.Header as={Header} size="tiny">
-              {i18next.t('Options')}
+              {i18next.t("Options")}
             </Card.Header>
           </Card.Content>
           <Card.Content extra>
@@ -89,12 +89,14 @@ AccessRightFieldCmp.propTypes = {
   formik: PropTypes.object.isRequired,
   label: PropTypes.string.isRequired,
   labelIcon: PropTypes.string.isRequired,
+  showMetadataAccess: PropTypes.bool,
   community: PropTypes.object,
 };
 
 AccessRightFieldCmp.defaultProps = {
+  showMetadataAccess: true,
   community: undefined,
-}
+};
 
 const mapStateToPropsAccessRightFieldCmp = (state) => ({
   community: state.deposit.editorState.selectedCommunity,
@@ -111,9 +113,7 @@ export class AccessRightField extends Component {
 
     return (
       <Field name={fieldPath}>
-        {(formik) => (
-          <AccessRightFieldComponent formik={formik} {...this.props} />
-        )}
+        {(formik) => <AccessRightFieldComponent formik={formik} {...this.props} />}
       </Field>
     );
   }
@@ -127,5 +127,6 @@ AccessRightField.propTypes = {
 };
 
 AccessRightField.defaultProps = {
-  fieldPath: 'access',
+  labelIcon: undefined,
+  isMetadataOnly: undefined,
 };

@@ -5,18 +5,14 @@
 // React-Invenio-Deposit is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import React from 'react';
+import React from "react";
 
-import { Dropdown } from 'semantic-ui-react';
-import { withState } from 'react-searchkit';
-import { i18next } from '@translations/i18next';
+import { Dropdown } from "semantic-ui-react";
+import { withState } from "react-searchkit";
+import { i18next } from "@translations/i18next";
 
 export const FunderDropdown = withState(
-  ({
-    currentResultsState: awardsList,
-    updateQueryState: updateQueryState,
-    currentQueryState: currentQueryState,
-  }) => {
+  ({ currentResultsState: awardsList, updateQueryState, currentQueryState }) => {
     const [fundersFromFacets] = useFundersFromFacets(awardsList);
 
     /**
@@ -29,8 +25,8 @@ export const FunderDropdown = withState(
     function onFunderSelect(event, data) {
       let newFilter = [];
 
-      if (data && data.value !== '') {
-        newFilter = ['funders', data.value];
+      if (data && data.value !== "") {
+        newFilter = ["funders", data.value];
       }
       updateQueryState({ ...currentQueryState, filters: newFilter, page: 1 });
     }
@@ -55,15 +51,13 @@ export const FunderDropdown = withState(
             return;
           }
 
-          const funders = awards.data.aggregations?.funders?.buckets.map(
-            (agg) => {
-              return {
-                key: agg.key,
-                value: agg.key,
-                text: agg.label,
-              };
-            }
-          );
+          const funders = awards.data.aggregations?.funders?.buckets.map((agg) => {
+            return {
+              key: agg.key,
+              value: agg.key,
+              text: agg.label,
+            };
+          });
           setResult(funders);
         }
 
@@ -75,7 +69,7 @@ export const FunderDropdown = withState(
 
     return (
       <Dropdown
-        placeholder={i18next.t('Funder')}
+        placeholder={i18next.t("Funder")}
         search
         selection
         clearable
@@ -84,7 +78,7 @@ export const FunderDropdown = withState(
         options={fundersFromFacets || []}
         allowAdditions={false}
         onChange={onFunderSelect}
-        fluid={true}
+        fluid
         selectOnBlur={false}
         selectOnNavigation={false}
       />

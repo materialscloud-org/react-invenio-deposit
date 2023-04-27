@@ -4,70 +4,94 @@
 // React-Invenio-Deposit is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import { i18next } from '@translations/i18next';
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Button } from 'semantic-ui-react';
-import { changeSelectedCommunity } from '../../state/actions';
-import { CommunitySelectionModal } from '../CommunitySelectionModal';
-import { PublishButton } from './PublishButton';
-import { SubmitReviewButton } from './SubmitReviewButton';
+import { i18next } from "@translations/i18next";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Button } from "semantic-ui-react";
+import { changeSelectedCommunity } from "../../state/actions";
+import { CommunitySelectionModal } from "../CommunitySelectionModal";
+import { PublishButton } from "./PublishButton";
+import { SubmitReviewButton } from "./SubmitReviewButton";
 
 class SubmitReviewOrPublishComponent extends Component {
-  state = { confirmOpen: false };
-
-  handleOpen = () => this.setState({ confirmOpen: true });
-
-  handleClose = () => this.setState({ confirmOpen: false });
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false,
+    };
+  }
   render() {
     const {
       community,
-      changeSelectedCommunity,
+      changeSelectedCommunityFn,
       showChangeCommunityButton,
+      showDirectPublishButton,
       showSubmitForReviewButton,
       ...ui
     } = this.props;
+    const { modalOpen } = this.state;
+    let result;
 
-    return showSubmitForReviewButton ? (
-      <SubmitReviewButton {...ui} />
-    ) : showChangeCommunityButton ? (
-      <>
-        <CommunitySelectionModal
-          onCommunityChange={(community) => {
-            changeSelectedCommunity(community);
-          }}
-          chosenCommunity={community}
-          trigger={
-            <Button
-              content={i18next.t("Change community")}
-              fluid={true}
-              className="mb-10"
-            />
-          }
-        />
-        <PublishButton
-          buttonLabel={i18next.t('Publish without community')}
-          publishWithoutCommunity={true}
+    if (showSubmitForReviewButton) {
+      result = (
+        <SubmitReviewButton
+          directPublish={showDirectPublishButton}
           {...ui}
+          fluid
+          className="mb-10"
         />
-      </>
-    ) : (
-      <PublishButton {...ui} />
-    );
+      );
+    } else if (showChangeCommunityButton) {
+      result = (
+        <>
+          <CommunitySelectionModal
+            onCommunityChange={(community) => {
+              changeSelectedCommunityFn(community);
+            }}
+            onModalChange={(value) => this.setState({ modalOpen: value })}
+            modalOpen={modalOpen}
+            displaySelected
+            chosenCommunity={community}
+            trigger={
+              <Button content={i18next.t("Change community")} fluid className="mb-10" />
+            }
+          />
+          <PublishButton
+            buttonLabel={i18next.t("Publish without community")}
+            publishWithoutCommunity
+            {...ui}
+          />
+        </>
+      );
+    } else {
+      result = <PublishButton {...ui} />;
+    }
+    return result;
   }
 }
 
+SubmitReviewOrPublishComponent.propTypes = {
+  community: PropTypes.object,
+  changeSelectedCommunityFn: PropTypes.func.isRequired,
+  showChangeCommunityButton: PropTypes.bool.isRequired,
+  showDirectPublishButton: PropTypes.bool.isRequired,
+  showSubmitForReviewButton: PropTypes.bool.isRequired,
+};
+
+SubmitReviewOrPublishComponent.defaultProps = {
+  community: undefined,
+};
+
 const mapStateToProps = (state) => ({
   community: state.deposit.editorState.selectedCommunity,
-  showSubmitForReviewButton:
-    state.deposit.editorState.ui.showSubmitForReviewButton,
-  showChangeCommunityButton:
-    state.deposit.editorState.ui.showChangeCommunityButton,
+  showDirectPublishButton: state.deposit.editorState.ui.showDirectPublishButton,
+  showChangeCommunityButton: state.deposit.editorState.ui.showChangeCommunityButton,
+  showSubmitForReviewButton: state.deposit.editorState.ui.showSubmitForReviewButton,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  changeSelectedCommunity: (community) =>
+  changeSelectedCommunityFn: (community) =>
     dispatch(changeSelectedCommunity(community)),
 });
 

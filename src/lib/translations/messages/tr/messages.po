@@ -1,9 +1,14 @@
 # 
+# Translators:
+# Berat Aldemir <berataldemir@gmail.com>, 2021
+# Ben Translation and Interpreting Services <info@bentercume.com>, 2022
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-29T13:05:15.622Z\n"
+"POT-Creation-Date: 2022-10-28T08:02:09.099Z\n"
 "PO-Revision-Date: 2021-06-29 13:20+0000\n"
+"Last-Translator: Ben Translation and Interpreting Services <info@bentercume.com>, 2022\n"
 "Language-Team: Turkish (https://www.transifex.com/inveniosoftware/teams/23537/tr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,14 +16,785 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "mime-version: 1.0\n"
 
-msgid "New version"
+msgid "Embargo until"
+msgstr "Şu tarihe kadar ambargo uygula: "
+
+msgid "YYYY-MM-DD"
+msgstr "YYYY-AA-GG"
+
+msgid "The full record is restricted."
+msgstr "Tam kayda erişim kısıtlanmıştır."
+
+msgid "Embargoed (full record)"
+msgstr "Ambargo uygulanmış (tam kayıt)"
+
+msgid "Embargoed (files-only)"
+msgstr "Ambargo uygulanmış (yalnızca dosyalar)"
+
+msgid ""
+"The record is publicly accessible. On <bold>{{ date }}</bold> the files will"
+" automatically be made publicly accessible. Until then, the files can "
+"<bold>only</bold> be accessed by <bold>users specified</bold> in the "
+"permissions."
 msgstr ""
+"Kayıt herkese açıktır. <bold>{{ date }}</bold> tarihinde dosyalar otomatik "
+"olarak herkesin erişimine açılacak. O zamana kadar dosyalara "
+"<bold>sadece</bold> izinlerde <bold>belirtilen kullanıcılar</bold> "
+"erişebilir."
+
+msgid "The record has no files."
+msgstr "Bu kayıt hiç dosya içermemekte."
+
+msgid ""
+"On <bold>{{ date }}</bold> the record will automatically be made publicly "
+"accessible. Until then, the record can <bold>only</bold> be accessed by "
+"<bold>users specified</bold> in the permissions."
+msgstr ""
+"<bold>{{ date }}</bold> tarihinde, kayıt otomatik olarak herkesin erişimine "
+"açılacaktır. O zamana kadar kayda <bold>sadece</bold> izinlerde "
+"<bold>belirtilen kullanıcılar</bold> erişebilir."
+
+msgid "Public"
+msgstr "Herkese açık"
+
+msgid "Restricted"
+msgstr "Kısıtlı"
+
+msgid "The record and files are publicly accessible."
+msgstr "Kayıt ve dosyalar herkesin erişimine açık."
+
+msgid "The record is publicly accessible."
+msgstr "Kayıt herkesin erişimine açık."
+
+msgid "Public with restricted files"
+msgstr "Kısıtlanmış dosyalarla beraber herkese açık"
+
+msgid ""
+"The record can <1>only</1> be accessed by <3>users specified</3> in the "
+"permissions."
+msgstr ""
+"Kayda <1>sadece</1> izinlerde <3>belirtilen kullanıcılar</3> erişebilir."
+
+msgid "Full record"
+msgstr "Tam kayıt"
+
+msgid "Files only"
+msgstr "Yalnızca dosyalar"
+
+msgid "Apply an embargo"
+msgstr "Ambargo uygula"
+
+msgid "Embargo reason"
+msgstr "Ambargo uygulama nedeni"
+
+msgid "Optionally, describe the reason for the embargo."
+msgstr "İsteğe bağlı olarak, ambargonun nedenini açıklayın."
+
+msgid "Embargo was lifted on {{fmtDate}}."
+msgstr "Ambargo {{fmtDate}} tarihinde kaldırıldı."
+
+msgid "Reason"
+msgstr "Sebep"
+
+msgid ""
+"Record or files protection must be <1>restricted</1> to apply an embargo."
+msgstr ""
+"Ambargo uygulamak için kayıt veya dosya koruması "
+"<1>kısıtlandırılmalıdır</1>."
+
+msgid "Options"
+msgstr "Seçenekler"
+
+msgid "Add description"
+msgstr "Açıklama ekle"
+
+msgid "Additional Description"
+msgstr "Ek açıklama"
+
+msgid "Type"
+msgstr "Tür"
+
+msgid "Language"
+msgstr "Dil"
+
+msgid "Select language"
+msgstr "Dil Seçin"
+
+msgid "Add titles"
+msgstr "Başlık ekleyin"
+
+msgid "Search or create affiliation'"
+msgstr "Bağlı olunan kurum/kuruluş ara veya oluştur"
+
+msgid "Affiliations"
+msgstr "Bağlı olunan kurumlar/kuruluşlar"
+
+msgid "Search for affiliations.."
+msgstr "Bağlı olunan kurumları/kuruluşları ara"
+
+msgid "Add creator"
+msgstr "Oluşturan kişi ekle"
+
+msgid "Edit"
+msgstr "Düzenle"
+
+msgid "Remove"
+msgstr "Kaldır"
+
+msgid "Name identifiers"
+msgstr "Ad tanımlayıcıları"
+
+msgid "e.g. ORCID, ISNI or GND."
+msgstr "Örneğin. ORCID, ISNI veya GND."
+
+msgid "Type the value of an identifier..."
+msgstr "Bir tanımlayıcının değerini yazın..."
+
+msgid "Save and add another"
+msgstr "Kaydet ve başka bir tane ekle"
+
+msgid "Family name is a required field."
+msgstr "Soyadı zorunlu bir alan."
+
+msgid "Name is a required field."
+msgstr "Ad, zorunlu bir alan."
+
+msgid "Role is a required field."
+msgstr "Rol zorunlu bir alan."
+
+msgid "Added"
+msgstr "Eklendi"
+
+msgid "Person"
+msgstr "Kişi"
+
+msgid "Organization"
+msgstr "Kuruluş"
+
+msgid "Family name"
+msgstr "Soyadı"
+
+msgid "Name"
+msgstr "Ad"
+
+msgid "Organization name"
+msgstr "Kuruluş Adı"
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Select role"
+msgstr "Rol Seçin"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Save"
+msgstr "Kaydet"
+
+msgid "Add date"
+msgstr "Tarih ekle"
+
+msgid "Format: DATE or DATE/DATE where DATE is YYYY or YYYY-MM or YYYY-MM-DD."
+msgstr ""
+"Biçim: TARİH veya TARİH/TARİH, burada TARİH YYYY veya YYYY-AA veya YYYY-AA-"
+"GG'dir."
+
+msgid "Date"
+msgstr "Tarih"
+
+msgid "Description"
+msgstr "Tanım"
+
+msgid "Dates"
+msgstr "Tarihler"
+
+msgid "YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD"
+msgstr "YYYY-AA-GG veya YYYY-AA-GG/YYYY-AA-GG"
+
+msgid "discard changes"
+msgstr "değişiklikleri gözardı et"
+
+msgid "discard version"
+msgstr "sürümü gözardı et"
+
+msgid "delete"
+msgstr "sil"
+
+msgid "Are you sure you want to discard the changes to this draft?"
+msgstr ""
+"Bu taslakta yapılan değişikliklerden vazgeçmek istediğinize emin misiniz?"
+
+msgid "Are you sure you want to delete this new version?"
+msgstr "Bu yeni sürümü silmek istediğinizden emin misiniz?"
+
+msgid "Are you sure you want to delete this draft?"
+msgstr "Bu taslağı silmek istediğinize emin misiniz?"
+
+msgid "New version"
+msgstr "Yeni sürüm"
 
 msgid "New upload"
-msgstr ""
+msgstr "Yeni Yükleme"
 
 msgid "Edit upload"
+msgstr "Yüklemeyi düzenle"
+
+msgid "Uploading the selected files would result in"
+msgstr "Seçili dosyaların yüklenmesi şuna neden olur: "
+
+msgid "but the limit is"
+msgstr "fakat limit: "
+
+msgid "You can import files from the previous version."
+msgstr "Dosyaları önceki sürümden içe aktarabilirsiniz."
+
+msgid ""
+"File addition, removal or modification are not allowed after you have "
+"published your upload."
 msgstr ""
+"Yüklemenizi yayınladıktan sonra dosya ekleme, kaldırma veya değiştirmeye "
+"izin verilmez."
+
+msgid "You must create a new version to add, modify or delete files."
+msgstr ""
+"Dosya eklemek, değiştirmek veya silmek için yeni bir sürüm oluşturmalısınız."
+
+msgid "Upload files"
+msgstr "Dosyaları yükle"
+
+msgid "Import files"
+msgstr "Dosyaları içe aktar"
+
+msgid "Preview"
+msgstr "Ön İzleme"
+
+msgid "Filename"
+msgstr "Dosya adı"
+
+msgid "Size"
+msgstr "Boyut"
+
+msgid "Progress"
+msgstr "İlerleme durumu"
+
+msgid ""
+"This is the file fingerprint (MD5 checksum), which can be used to verify the"
+" file integrity."
+msgstr ""
+"Bu, dosya bütünlüğünü doğrulamak için kullanılabilen dosya parmak izidir "
+"(MD5 sağlama toplamı)."
+
+msgid "Pending"
+msgstr "Bekliyor"
+
+msgid "or"
+msgstr "veya"
+
+msgid "Metadata-only record"
+msgstr "yalnızca-üstveri kaydı"
 
 msgid "Storage available"
+msgstr "Kullanılabilir depolama alanı"
+
+msgid "{{length}} out of {{maxfiles}} files"
+msgstr "{{maxfiles}} dosyadan {{length}} tanesi"
+
+msgid "out of"
+msgstr "dosyadan"
+
+msgid "Files"
+msgstr "Dosyalar"
+
+msgid "Resource type"
+msgstr "Kaynak türü"
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "Additional titles"
+msgstr "Ek başlıklar"
+
+msgid "Publication date"
+msgstr "Yayın tarihi"
+
+msgid "Creators"
+msgstr "Oluşturanlar"
+
+msgid "Contributors"
+msgstr "Katkıda Bulunan Kişiler"
+
+msgid "Additional descriptions"
+msgstr "Ek açıklamalar"
+
+msgid "Licenses"
+msgstr "Lisanslar"
+
+msgid "Languages"
+msgstr "Diller"
+
+msgid "Version"
+msgstr "Sürüm"
+
+msgid "Publisher"
+msgstr "Yayımcı"
+
+msgid "Related works"
+msgstr "İlgili çalışmalar"
+
+msgid "Alternate identifiers"
+msgstr "Alternatif tanımlayıcılar"
+
+msgid "Record successfully saved."
+msgstr "Kayıt başarıyla kaydedildi."
+
+msgid "Record saved with validation errors:"
+msgstr "Kayıt doğrulama hatalarıyla kaydedildi: "
+
+msgid ""
+"Oops, something went wrong! The draft was not saved. Please try again. If "
+"the problem persists, contact user support."
+msgstr ""
+
+msgid ""
+"Oops, something went wrong! The draft was not published. Please try again. "
+"If the problem persists, contact user support."
+msgstr ""
+
+msgid ""
+"Oops, something went wrong! The draft was not submitted for review. Please "
+"try again. If the problem persists, contact user support."
+msgstr ""
+
+msgid ""
+"Oops, something went wrong! The draft was not deleted. Please try again. If "
+"the problem persists, contact user support."
+msgstr ""
+
+msgid ""
+"Oops, something went wrong! The draft cannot be previewed. Please try again."
+" If the problem persists, contact user support."
+msgstr ""
+
+msgid ""
+"Oops, something went wrong! The identifier was not reserved. Please try "
+"again. If the problem persists, contact user support."
+msgstr ""
+
+msgid ""
+"Oops, something went wrong! The identifier was not discarded. Please try "
+"again. If the problem persists, contact user support."
+msgstr ""
+
+msgid ""
+"Oops, something went wrong! The draft could not be saved before uploading "
+"the file. Please try again. If the problem persists, contact user support."
+msgstr ""
+
+msgid "Add award"
+msgstr "Ödül ekle"
+
+msgid "Add identifier"
+msgstr "Tanımlayıcı ekle"
+
+msgid "Identifier"
+msgstr "Tanımlayıcı"
+
+msgid "Scheme"
+msgstr "Şema"
+
+msgid "Search for languages..."
+msgstr "Dilleri ara..."
+
+msgid "Search for a language by name (e.g \"eng\", \"fr\" or \"Polish\")"
+msgstr "Ada göre bir dil arayın (ör. \"eng\", \"fr\" veya \"Lehçe\")"
+
+msgid "Add standard"
+msgstr "Standart ekle: "
+
+msgid "Add custom"
+msgstr "Özelleştirilmiş ekle: "
+
+msgid "Read more"
+msgstr "Devamını okuyun"
+
+msgid "Title is a required field."
+msgstr "Başlık zorunlu bir alan."
+
+msgid "Link must be a valid URL"
+msgstr "Bağlantı geçerli bir URL olmalıdır"
+
+msgid "Recommended"
+msgstr "Tavsiye edilen"
+
+msgid "All"
+msgstr "Tümü"
+
+msgid "Data"
+msgstr "Veri"
+
+msgid "Software"
+msgstr "Yazılım"
+
+msgid "License title"
+msgstr "Lisans başlığı"
+
+msgid "Link"
+msgstr "Bağlantı"
+
+msgid "License link"
+msgstr "Lisans bağlantısı"
+
+msgid "Add license"
+msgstr "Lisans ekle"
+
+msgid "Change license"
+msgstr "Lisansı değiştir"
+
+msgid "You don't have permissions to create a new version."
+msgstr "Yeni bir sürüm oluşturma izniniz yok."
+
+msgid ""
+"In case your upload was already published elsewhere, please use the date of "
+"the first publication. Format: YYYY-MM-DD, YYYY-MM, or YYYY. For intervals "
+"use DATE/DATE, e.g. 1939/1945."
+msgstr ""
+"Yüklemeniz başka bir yerde yayınlanmışsa, lütfen ilk yayının tarihini "
+"kullanın. Biçim: YYYY-AA-GG, YYYY-AA veya YYYY. Aralıklar için TARİH/TARİH "
+"kullanın, ör. 1939/1945."
+
+msgid ""
+"YYYY-MM-DD or YYYY-MM-DD/YYYY-MM-DD for intervals. MM and DD are optional."
+msgstr ""
+"Aralıklar için YYYY-AA-GG veya YYYY-AA-GG/YYYY-AA-GG. MM ve DD isteğe "
+"bağlıdır."
+
+msgid ""
+"The publisher is used to formulate the citation, so consider the prominence "
+"of the role."
+msgstr ""
+"Yayıncı, alıntıyı formüle etmek için kullanılır, bu nedenle rolün önemini "
+"göz önünde bulundurun."
+
+msgid ""
+"Specify identifiers of related works. Supported identifiers include DOI, "
+"Handle, ARK, PURL, ISSN, ISBN, PubMed ID, PubMed Central ID, ADS "
+"Bibliographic Code, arXiv, Life Science Identifiers (LSID), EAN-13, ISTC, "
+"URNs, and URLs."
+msgstr ""
+"İlgili çalışmaların tanımlayıcılarını belirtin. Desteklenen tanımlayıcılar "
+"arasında DOI, Handle, ARK, PURL, ISSN, ISBN, PubMed ID, PubMed Central ID, "
+"ADS Bibliographic Code, arXiv, Life Science Identifiers (LSID), EAN-13, "
+"ISTC, URN'ler ve URL'ler bulunur."
+
+msgid "Add related work"
+msgstr "İlgili çalışma ekle"
+
+msgid "Relation"
+msgstr "İlişki"
+
+msgid "Select relation..."
+msgstr "İlişki seçin..."
+
+msgid "Save draft"
+msgstr "Taslağı kaydet"
+
+msgid "Suggest from"
+msgstr "Şuradan öner: "
+
+msgid "Subjects"
+msgstr "Konular"
+
+msgid "Search for a subject by name"
+msgstr "Ada göre bir konu arayın"
+
+msgid ""
+"Mostly relevant for software and dataset uploads. A semantic version string "
+"is preferred see<1> semver.org</1>, but any version string is accepted."
+msgstr ""
+"Çoğunlukla yazılım ve veri kümesi yüklemeleriyle ilgilidir. Semantik bir "
+"sürüm dizesi tercih edilir, bkz. <1>semver.org</1>, ancak herhangi bir sürüm"
+" dizesi kabul edilir."
+
+msgid "Do you already have a {{pidLabel}} for this upload?"
+msgstr "Bu yükleme için zaten bir {{pidLabel}} var mı?"
+
+msgid "Yes"
+msgstr "Evet"
+
+msgid "No"
+msgstr "Hayır"
+
+msgid "e.g. ROR, ISNI or GND."
+msgstr "Örneğin. ROR, ISNI veya GND."
+
+msgid "The following files already exist"
+msgstr "Aşağıdaki dosyalar zaten var"
+
+msgid "Disable files for this record"
+msgstr ""
+
+msgid "DOI"
+msgstr "DOI"
+
+msgid "Search"
+msgstr "Ara"
+
+msgid "Search or create subjects..."
+msgstr ""
+
+msgid "Edit creator"
+msgstr ""
+
+msgid "Add {{mode}} license"
+msgstr ""
+
+msgid "Change {{mode}} license"
+msgstr ""
+
+msgid "My communities"
+msgstr "Topluluklarım"
+
+msgid "Search in all communities"
+msgstr ""
+
+msgid "Search in my communities"
+msgstr ""
+
+msgid "Search for persons by name, identifier, or affiliation..."
+msgstr ""
+
+msgid "Select a community"
+msgstr ""
+
+msgid "Submit review"
+msgstr ""
+
+msgid "Publish"
+msgstr "Yayınla"
+
+msgid "Are you sure you want to publish this record?"
+msgstr ""
+
+msgid "The draft was not published. Record saved with validation errors:"
+msgstr ""
+
+msgid ""
+"The draft was not submitted for review. Record saved with validation errors:"
+msgstr ""
+
+msgid "In review"
+msgstr ""
+
+msgid ""
+"Community curators will review your upload. Once accepted, it will be "
+"published."
+msgstr ""
+
+msgid "Declined"
+msgstr ""
+
+msgid "The request to submit this upload to the community was declined."
+msgstr ""
+
+msgid "Expired"
+msgstr ""
+
+msgid "The request to submit this upload to the community has expired."
+msgstr ""
+
+msgid "Published"
+msgstr "Yayınlanmış"
+
+msgid "Your upload is published."
+msgstr ""
+
+msgid "Draft"
+msgstr ""
+
+msgid ""
+"Once your upload is complete, you can submit it for review to the community "
+"curators."
+msgstr ""
+
+msgid ""
+"Once your upload is complete, you can publish or submit it for review to the"
+" community curators."
+msgstr ""
+
+msgid "New version draft"
+msgstr ""
+
+msgid "Once your upload is complete, you can publish it."
+msgstr ""
+
+msgid "View request"
+msgstr ""
+
+msgid "Submitted for review"
+msgstr ""
+
+msgid "Change community"
+msgstr ""
+
+msgid "Publish without community"
+msgstr ""
+
+msgid "Select the community where you want to submit your record."
+msgstr ""
+
+msgid "View community"
+msgstr ""
+
+msgid "Opens in new tab"
+msgstr ""
+
+msgid "Selected"
+msgstr ""
+
+msgid "Select"
+msgstr "Seç"
+
+msgid "Select "
+msgstr ""
+
+msgid "Change"
+msgstr ""
+
+msgid "Search for a funder by name"
+msgstr ""
+
+msgid "Funder"
+msgstr ""
+
+msgid "Search for funder..."
+msgstr ""
+
+msgid "Award information"
+msgstr ""
+
+msgid "Number"
+msgstr ""
+
+msgid "Award number"
+msgstr ""
+
+msgid "Award Title"
+msgstr ""
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Award URL"
+msgstr ""
+
+msgid "Add standard award"
+msgstr ""
+
+msgid "Add custom award"
+msgstr ""
+
+msgid "Change award"
+msgstr ""
+
+msgid "Did not find your award? "
+msgstr ""
+
+msgid "Add a custom award."
+msgstr ""
+
+msgid ""
+"Once the record is published you will no longer be able to change the files "
+"in the upload! However, you will still be able to update the record's "
+"metadata later."
+msgstr ""
+
+msgid "Submit for review"
+msgstr ""
+
+msgid "optional"
+msgstr "isteğe bağlı"
+
+msgid "Open external link"
+msgstr ""
+
+msgid "Search for awards"
+msgstr ""
+
+msgid ""
+"The record is publicly accessible. The files can <1>only</1> be accessed by "
+"<4>users specified</4> in the permissions."
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "The files of this record are restricted."
+msgstr ""
+
+msgid "Remove field"
+msgstr ""
+
+msgid ""
+"Did not find a community that fits you? Upload without a community or "
+"<2>create your own.</2>"
+msgstr ""
+
+msgid "Given names"
+msgstr ""
+
+msgid "Couldn't find your person? You can <2>create a new entry</2>."
+msgstr ""
+
+msgid "Drag and drop files"
+msgstr ""
+
+msgid "Default preview"
+msgstr ""
+
+msgid "Delete file"
+msgstr ""
+
+msgid "This is a Metadata-only record."
+msgstr ""
+
+msgid ""
+"Oops, something went wrong! Importing files from the previous version "
+"failed. Please try again. If the problem persists, contact user support."
+msgstr ""
+
+msgid "Funder is required."
+msgstr ""
+
+msgid "Title must be set alongside number."
+msgstr ""
+
+msgid "Number must be set alongside title."
+msgstr ""
+
+msgid "URL must be valid."
+msgstr ""
+
+msgid "URL must be set alongside title and number."
+msgstr ""
+
+msgid "Identifiers"
+msgstr ""
+
+msgid "You must accept this."
+msgstr ""
+
+msgid "Before requesting review please read and check the following:"
+msgstr ""
+
+msgid ""
+"The '{{communityTitle}}' curators will have access to\n"
+"                 <bold>view</bold> and <bold>edit</bold> your\n"
+"                 upload's metadata and files."
+msgstr ""
+
+msgid ""
+"If your upload is accepted by the community curators, it will be "
+"<bold>immediately published</bold>. Before that, you will still be able to "
+"modify metadata and files of this upload."
 msgstr ""

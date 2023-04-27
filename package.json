@@ -1,7 +1,7 @@
 {
-  "name": "react-invenio-deposit-archive",
-  "version": "7.0.41",
-  "description": "React components to build forms in BIG-MAP Archive",
+  "name": "react-invenio-deposit",
+  "version": "2.6.0",
+  "description": "React components to build forms in Invenio",
   "main": "dist/cjs/index.js",
   "browser": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -10,10 +10,39 @@
   ],
   "config": {
     "languages": [
-      "en",
+      "af",
+      "ar",
+      "bg",
+      "ca",
+      "cs",
+      "da",
       "de",
+      "el",
+      "en",
+      "es",
+      "et",
+      "et_EE",
+      "fa",
+      "fr",
+      "gl",
+      "hr",
+      "hu",
+      "it",
+      "ja",
+      "ka",
+      "lt",
+      "no",
+      "pl",
+      "pt",
+      "ro",
+      "ru",
+      "rw",
+      "sk",
+      "sv",
       "tr",
-      "el"
+      "uk",
+      "zh_CN",
+      "zh_TW"
     ]
   },
   "scripts": {
@@ -31,7 +60,7 @@
     "init_catalog": "node ./src/lib/translations/scripts/initCatalog",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint src/ --ext .js",
     "format": "prettier --config ./.prettierrc --ignore-path ./.prettierignore --write \"src/**/*.js\""
   },
   "peerDependencies": {
@@ -51,7 +80,7 @@
     "react-dom": "^16.13.0",
     "react-dropzone": "^11.0.0",
     "react-i18next": "^11.11.0",
-    "react-invenio-forms": "^0.10.0",
+    "react-invenio-forms": "^2.0.0",
     "react-overridable": "^0.0.3",
     "react-redux": "^7.2.0",
     "react-searchkit": "^2.0.0",
@@ -59,12 +88,14 @@
     "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.4.0",
     "semantic-ui-react": "^2.1.0",
-    "yup": "^0.28.0"
+    "yup": "^0.32.11",
+    "query-string": "^7.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@ckeditor/ckeditor5-build-classic": "^16.0.0",
     "@ckeditor/ckeditor5-react": "^2.1.0",
+    "@inveniosoftware/eslint-config-invenio": "^2.0.0",
     "@rollup/plugin-alias": "^3.1.0",
     "@rollup/plugin-babel": "^5.0.0",
     "@rollup/plugin-commonjs": "^11.1.0",
@@ -88,16 +119,16 @@
     "json": "^9.0.0",
     "lodash": "^4.17.0",
     "luxon": "^1.23.0",
-    "prettier": "^2.0.0",
+    "query-string": "^7.1.1",
     "react": "^16.13.0",
     "react-dnd": "^11.1.0",
     "react-dnd-html5-backend": "^11.1.0",
     "react-dom": "^16.13.0",
     "react-i18next": "^11.11.0",
-    "react-invenio-forms": "^0.10.7",
+    "react-invenio-forms": "^1.0.0",
     "react-overridable": "^0.0.3",
     "react-redux": "^7.2.0",
-    "react-scripts": "^3.4.0",
+    "react-scripts": "^5.0.1",
     "react-searchkit": "^2.0.0",
     "redux": "^4.0.0",
     "redux-mock-store": "^1.5.0",
@@ -106,11 +137,11 @@
     "rollup": "^2.10.0",
     "rollup-plugin-local-resolve": "^1.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-postcss": "^3.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-url": "^3.0.0",
     "semantic-ui-css": "^2.4.0",
     "semantic-ui-react": "^2.1.0",
-    "yup": "^0.28.0"
+    "yup": "^0.32.11"
   },
   "author": {
     "name": "CERN",
@@ -150,7 +181,7 @@
     ]
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "jest": {
     "snapshotSerializers": [

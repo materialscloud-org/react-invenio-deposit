@@ -5,7 +5,7 @@
 // React-Invenio-Deposit is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import _isEmpty from 'lodash/isEmpty';
+import _isEmpty from "lodash/isEmpty";
 import {
   DISCARD_PID_FAILED,
   DISCARD_PID_STARTED,
@@ -29,10 +29,10 @@ import {
   RESERVE_PID_STARTED,
   RESERVE_PID_SUCCEEDED,
   SET_COMMUNITY,
-} from '../types';
+} from "../types";
 
 async function changeURLAfterCreation(draftURL) {
-  window.history.replaceState(undefined, '', draftURL);
+  window.history.replaceState(undefined, "", draftURL);
 }
 
 export const saveDraftWithUrlUpdate = async (draft, draftsService) => {
@@ -67,11 +67,7 @@ async function _saveDraft(
   const draftValidationErrorResponse = draftHasValidationErrors ? response : {};
 
   const {
-    actions: {
-      communityStateMustBeChecked,
-      shouldDeleteReview,
-      shouldUpdateReview,
-    },
+    actions: { communityStateMustBeChecked, shouldDeleteReview, shouldUpdateReview },
     selectedCommunity,
   } = depositState.editorState;
 
@@ -142,13 +138,13 @@ export const save = (draft) => {
   };
 };
 
-export const publish = (draft, { withoutCommunity = false }) => {
+export const publish = (draft, { removeSelectedCommunity = false }) => {
   return async (dispatch, getState, config) => {
     dispatch({
       type: DRAFT_PUBLISH_STARTED,
     });
 
-    if (withoutCommunity) {
+    if (removeSelectedCommunity) {
       // we set the community to null so we delete the associated review when
       // saving the draft
       await dispatch(changeSelectedCommunity(null));
@@ -163,9 +159,7 @@ export const publish = (draft, { withoutCommunity = false }) => {
 
     const draftWithLinks = response.data;
     try {
-      const response = await config.service.drafts.publish(
-        draftWithLinks.links
-      );
+      const response = await config.service.drafts.publish(draftWithLinks.links);
       // after publishing, redirect to the published record
       const recordURL = response.data.links.self_html;
       window.location.replace(recordURL);
@@ -179,21 +173,21 @@ export const publish = (draft, { withoutCommunity = false }) => {
   };
 };
 
-export const submitReview = (draft, { reviewComment }) => {
+export const submitReview = (draft, { reviewComment, directPublish }) => {
   return async (dispatch, getState, config) => {
     dispatch({
       type: DRAFT_SUBMIT_REVIEW_STARTED,
       payload: {
         reviewComment,
       },
+      directPublish,
     });
 
     const response = await _saveDraft(draft, config.service.drafts, {
       depositState: getState().deposit,
       dispatchFn: dispatch,
       failType: DRAFT_SUBMIT_REVIEW_FAILED,
-      partialValidationActionType:
-        DRAFT_SUBMIT_REVIEW_FAILED_WITH_VALIDATION_ERRORS,
+      partialValidationActionType: DRAFT_SUBMIT_REVIEW_FAILED_WITH_VALIDATION_ERRORS,
     });
 
     const draftWithLinks = response.data;
@@ -202,14 +196,8 @@ export const submitReview = (draft, { reviewComment }) => {
         draftWithLinks.links,
         reviewComment
       );
-      const request = reqResponse.data;
-      // after submitting for review, redirect to the review record
-      const rawRequestURL = config.config.links.user_dashboard_request;
-      const requestURL = rawRequestURL.replace(
-        '<request_pid_value>',
-        request.id
-      );
-      window.location.replace(requestURL);
+      const nextURL = reqResponse.data.links.next_html;
+      window.location.replace(nextURL);
     } catch (error) {
       dispatch({
         type: DRAFT_SUBMIT_REVIEW_FAILED,
@@ -255,7 +243,7 @@ export const delete_ = () => {
       await config.service.drafts.delete(draft.links);
 
       // redirect to the the uploads page after deleting/discarding a draft
-      const redirectURL = '/me/uploads';
+      const redirectURL = "/me/uploads";
       window.location.replace(redirectURL);
     } catch (error) {
       dispatch({
@@ -281,10 +269,7 @@ export const reservePID = (draft, { pidType }) => {
       let response = await saveDraftWithUrlUpdate(draft, config.service.drafts);
 
       const draftWithLinks = response.data;
-      response = await config.service.drafts.reservePID(
-        draftWithLinks.links,
-        pidType
-      );
+      response = await config.service.drafts.reservePID(draftWithLinks.links, pidType);
 
       dispatch({
         type: RESERVE_PID_SUCCEEDED,
@@ -314,10 +299,7 @@ export const discardPID = (draft, { pidType }) => {
       let response = await saveDraftWithUrlUpdate(draft, config.service.drafts);
 
       const draftWithLinks = response.data;
-      response = await config.service.drafts.discardPID(
-        draftWithLinks.links,
-        pidType
-      );
+      response = await config.service.drafts.discardPID(draftWithLinks.links, pidType);
 
       dispatch({
         type: DISCARD_PID_SUCCEEDED,

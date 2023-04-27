@@ -5,7 +5,7 @@
 // React-Invenio-Deposit is free software; you can redistribute it and/or modify it
 // under the terms of the MIT License; see LICENSE file for more details.
 
-import _isEmpty from 'lodash/isEmpty';
+import _isEmpty from "lodash/isEmpty";
 import {
   DISCARD_PID_FAILED,
   DISCARD_PID_STARTED,
@@ -29,16 +29,16 @@ import {
   RESERVE_PID_STARTED,
   RESERVE_PID_SUCCEEDED,
   SET_COMMUNITY,
-} from '../types';
+} from "../types";
 
 export class DepositStatus {
-  static DRAFT = 'draft';
-  static NEW_VERSION_DRAFT = 'new_version_draft';
-  static DRAFT_WITH_REVIEW = 'draft_with_review';
-  static IN_REVIEW = 'in_review';
-  static DECLINED = 'declined';
-  static EXPIRED = 'expired';
-  static PUBLISHED = 'published';
+  static DRAFT = "draft";
+  static NEW_VERSION_DRAFT = "new_version_draft";
+  static DRAFT_WITH_REVIEW = "draft_with_review";
+  static IN_REVIEW = "in_review";
+  static DECLINED = "declined";
+  static EXPIRED = "expired";
+  static PUBLISHED = "published";
 
   static allowsReviewDeletionStates = [
     DepositStatus.DRAFT_WITH_REVIEW,
@@ -66,7 +66,7 @@ function hasStatus(record, statuses = []) {
 
 function getSelectedCommunityMetadata(record, selectedCommunity) {
   switch (selectedCommunity) {
-    case undefined:
+    case undefined: {
       // when `undefined`, retrieve the community from the record, if previously selected
       const reviewCommunityId = record.parent?.review?.receiver?.community;
       const defaultCommunityId = record.parent?.communities?.default;
@@ -85,6 +85,7 @@ function getSelectedCommunityMetadata(record, selectedCommunity) {
       return alreadyPublished
         ? record.expanded.parent.communities.default
         : record.expanded.parent.review.receiver;
+    }
     case null:
       // when value is `null`, the selected community was deselected
       return null;
@@ -113,6 +114,10 @@ function getSelectedCommunityMetadata(record, selectedCommunity) {
  *     - user has selected a community
  *     - the associated review for the selected community is not declined/expired
  *     - the record is not published
+ * - `ui.showDirectPublishButton`: true if all of the following are true:
+ *     - user has selected a community
+ *     - user can direct publish to a community
+ *     - the record is not published
  * - `ui.disableSubmitForReviewButton`: true if all the following are true
  *     - `ui.showSubmitForReviewButton` is true
  *     - the draft status is one of `DepositStatus.disallowsSubmitForReviewStates`
@@ -122,8 +127,9 @@ function getSelectedCommunityMetadata(record, selectedCommunity) {
  *     - the associated review for the selected community is declined/expired
  *     - the draft status is one of `DepositStatus.disallowsSubmitForReviewStates` and `ui.showCommunityHeader` is false
  * - `ui.showCommunityHeader`: false if all of the following is true:
- *     - the draft is published
- *     - the `record.parent.communities` is empty i.e the record was published without a community selected.
+ *     - the draft is published and
+ *     - the `record.parent.communities` is empty i.e the record was published without a community selected or,
+ *     - the selectedCommunity equals to `unresolvedCommunity` i.e the linked community is not found.
  *
  * When the `selectedCommunity` param is omitted, it will retrieve the community from the draft, if any.
  *
@@ -146,10 +152,7 @@ export function computeDepositState(record, selectedCommunity = undefined) {
   );
 
   // Serialize selectedCommunity
-  const _selectedCommunity = getSelectedCommunityMetadata(
-    record,
-    selectedCommunity
-  );
+  const _selectedCommunity = getSelectedCommunityMetadata(record, selectedCommunity);
   const communityIsSelected = !_isEmpty(_selectedCommunity);
 
   const draftReview = record?.parent?.review;
@@ -165,20 +168,24 @@ export function computeDepositState(record, selectedCommunity = undefined) {
     draftReview?.receiver?.community === _selectedCommunity?.id;
 
   // check if the record is published without a community selected
-  const isRecordPublishedWithoutCommunity =
-    hasStatus(record, [
-      DepositStatus.PUBLISHED,
-      DepositStatus.NEW_VERSION_DRAFT,
-    ]) && _isEmpty(record.parent?.communities);
+  const isGhostCommunity = _selectedCommunity?.is_ghost === true;
+  const _isCommunityResolved = communityIsSelected && !isGhostCommunity;
+
+  const isRecordPublishedWithoutOrUnresolvedCommunity =
+    hasStatus(record, [DepositStatus.PUBLISHED, DepositStatus.NEW_VERSION_DRAFT]) &&
+    (_isEmpty(record.parent?.communities) || !_isCommunityResolved);
+
+  // show direct publish button
+  const _showDirectPublishButton =
+    communityIsSelected &&
+    !hasStatus(record, [DepositStatus.PUBLISHED, DepositStatus.NEW_VERSION_DRAFT]) &&
+    _selectedCommunity.ui.permissions.can_include_directly;
 
   // show submit for review button conditions extracted to be reused
   const _showSubmitReviewButton =
     communityIsSelected &&
     !isReviewForSelectedCommunityDeclinedOrExpired &&
-    !hasStatus(record, [
-      DepositStatus.PUBLISHED,
-      DepositStatus.NEW_VERSION_DRAFT,
-    ]);
+    !hasStatus(record, [DepositStatus.PUBLISHED, DepositStatus.NEW_VERSION_DRAFT]);
 
   // show community selection button conditions extracted to be reused
   const _showCommunitySelectionButton = !hasStatus(record, [
@@ -192,24 +199,24 @@ export function computeDepositState(record, selectedCommunity = undefined) {
     !isReviewForSelectedCommunityCreated &&
     !isReviewForSelectedCommunityDeclinedOrExpired;
 
-  const shouldDeleteReview =
-    !communityIsSelected && depositStatusAllowsReviewDeletion;
+  const shouldDeleteReview = !communityIsSelected && depositStatusAllowsReviewDeletion;
 
   const _disableCommunitySelectionButton =
     _showCommunitySelectionButton &&
     (isReviewForSelectedCommunityDeclinedOrExpired ||
       (depositStatusDisallowsSubmitForReview &&
-        !isRecordPublishedWithoutCommunity));
+        !isRecordPublishedWithoutOrUnresolvedCommunity));
 
   return {
     selectedCommunity: _selectedCommunity,
     ui: {
       showSubmitForReviewButton: _showSubmitReviewButton,
+      showDirectPublishButton: _showDirectPublishButton,
       disableSubmitForReviewButton:
         _showSubmitReviewButton && depositStatusDisallowsSubmitForReview,
       showChangeCommunityButton: isReviewForSelectedCommunityDeclinedOrExpired,
       showCommunitySelectionButton: _showCommunitySelectionButton,
-      showCommunityHeader: !isRecordPublishedWithoutCommunity,
+      showCommunityHeader: !isRecordPublishedWithoutOrUnresolvedCommunity,
       disableCommunitySelectionButton: _disableCommunitySelectionButton,
     },
     actions: {
@@ -234,7 +241,10 @@ const depositReducer = (state = {}, action) => {
       return {
         ...state,
         actionState: action.type,
-        actionStateExtra: { reviewComment: action.payload.reviewComment },
+        actionStateExtra: {
+          reviewComment: action.payload.reviewComment,
+          directPublish: action.payload.directPublish,
+        },
       };
     case RESERVE_PID_STARTED:
     case DISCARD_PID_STARTED:
@@ -290,32 +300,31 @@ const depositReducer = (state = {}, action) => {
         actionState: action.type,
         actionStateExtra: {},
       };
-    case SET_COMMUNITY:
+    case SET_COMMUNITY: {
       let recordCopy = {
-        ...state.record
-      }
+        ...state.record,
+      };
 
-      const isCommunityRestricted = action.payload?.community?.access?.visibility === 'restricted';
-      const isRecordPublic = recordCopy.access.record === 'public';
+      const isCommunityRestricted =
+        action.payload?.community?.access?.visibility === "restricted";
+      const isRecordPublic = recordCopy.access.record === "public";
 
       if (isRecordPublic && isCommunityRestricted) {
         recordCopy = {
           ...state.record,
           access: {
-            files: 'restricted',
-            record: 'restricted'
-          }
+            files: "restricted",
+            record: "restricted",
+          },
         };
       }
 
       return {
         ...state,
         record: recordCopy,
-        editorState: computeDepositState(
-          recordCopy,
-          action.payload.community
-        ),
+        editorState: computeDepositState(recordCopy, action.payload.community),
       };
+    }
     default:
       return state;
   }
