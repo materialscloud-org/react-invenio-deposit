@@ -65,7 +65,7 @@ class SubmitReviewOrPublishComponent extends Component {
         </>
       );
     } else {
-      result = <PublishButton {...ui} />;
+      result = null;
     }
     return result;
   }
